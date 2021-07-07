@@ -5,7 +5,7 @@
 
 ### 1) Go to uniprot to download the text version of the human cdk2 proteins entry list.
 ### 2) Run pdb_list.py which gets CDK2 structures from uniprot txt
-### 3) Run pdbget.py which creates a list of obj PDB and also PDB codes in a txt usable format for the batch_download.sh
+### 3) Run pdb_get.py which creates a list of obj PDB and also PDB codes in a txt usable format for the batch_download.sh
 ### 4) go into PDB_files and run ```./batch_download.sh -f searchlist.txt -p``` on the terminal to get the gzip files.
 ### 5) To unzip the files run uncompress.py
 
