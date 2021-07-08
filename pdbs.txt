@@ -417,4 +417,4 @@ code: 6YL1; type: X-ray res:  chains: ['A'] length: 298 group: None
 code: 6YL6; type: X-ray res:  chains: ['A'] length: 298 group: None
 code: 6YLK; type: X-ray res:  chains: ['A'] length: 298 group: None
 code: 7B5L; type: EM res:  chains: ['L'] length: 298 group: None
-code: 7B5R; type: EM res:  chains: ['L'] length: 29 group: None
+code: 7B5R; type: EM res:  chains: ['L'] length: 298 group: None

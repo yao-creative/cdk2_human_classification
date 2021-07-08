@@ -74,7 +74,7 @@ code: 3R8M; type: X-ray res:  chains: ['A'] length: 298 group: ['inactive', 'clo
 code: 4EOJ; type: X-ray res:  chains: ['A', 'C'] length: 298 group: ['active', 'open']
 code: 3EOC; type: X-ray res:  chains: ['A', 'C'] length: 298 group: ['inactive', 'open']
 code: 3ROY; type: X-ray res:  chains: ['A'] length: 298 group: ['inactive', 'closed']
-code: 7B5R; type: EM res:  chains: ['L'] length: 29 group: ['active', 'open']
+code: 7B5R; type: EM res:  chains: ['L'] length: 298 group: ['active', 'open']
 code: 1H1P; type: X-ray res:  chains: ['A', 'C'] length: 298 group: ['active', 'open']
 code: 1H1R; type: X-ray res:  chains: ['A', 'C'] length: 298 group: ['active', 'open']
 code: 1H0V; type: X-ray res:  chains: ['A'] length: 298 group: ['inactive', 'closed']

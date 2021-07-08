@@ -41,6 +41,7 @@ def make_pdb_obj_list():
             chains = unravel_chain(chain_str)
             length = line[eq+3:len(line)-2]
             curr =Pdb(code,type,res,chains,length)
+            #pdb_dictionary with code as the key
             pdb_dict[code] =  curr
             out += code.lower()+", "
             pdbs_txt.write(repr(curr) + "\n")
