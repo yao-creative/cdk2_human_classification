@@ -5,7 +5,7 @@ import json
 #---------------------------------------------------
 #
 class Pdb:
-    def __init__(self, code, type, res, chains, length, group=None, structure=None, atoms =None):
+    def __init__(self, code, type, res, chains, length, group=None, structure=None, atoms =None, residues=None):
         self.code = code
         self.type = type
         self.res = res
@@ -16,9 +16,10 @@ class Pdb:
         #using store bio python structure feature as one of it's attributes
         self.structure = structure
         self.atoms = atoms
+        self.residues = residues
     def __repr__(self, structure=False):
         if structure:
-            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group}\nStructure: {self.structure}\natoms: {self.atoms}"
+            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group}\nStructure: {self.structure}\nresidues: {self.residues}"
         else:
             return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group}"
 
