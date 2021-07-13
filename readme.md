@@ -22,4 +22,8 @@
 
 ### look_through.py: Check through if every pdb file has specific type property
 
-### uncompress.py: uncompresses all gz files in pdb_files 
+### uncompress.py: uncompresses all gz files in pdb_files
+
+## Requirements:
+### Python3 
+### Pymol

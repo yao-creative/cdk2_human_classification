@@ -20,3 +20,16 @@ cd ../
 echo "annotating"
 python3 annotate.py
 open annotated.txt
+
+
+#render the groups on pymol
+cd structures
+ls *.txt
+split_groups=$?
+if [ $split_groups != 0 ] ; then
+    python3 pymol_list.py
+fi
+
+pymol pml_script.py opened_active
+pymol pml_script.py closed_inactive
+pymol pml_script.py opened_inactive
