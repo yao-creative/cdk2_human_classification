@@ -40,6 +40,9 @@ for i,code in enumerate(group_list):
         cmd.deselect()
         cmd.select(f"/{code}//{chain}/9:17/CA")
         cmd.color("tv_red","sele")
+        cmd.deselect()
+        cmd.select(f"/{code}//{chain}/150:159/CA")
+        cmd.color("palegreen","sele")
     except:
         pass
     if i==0:

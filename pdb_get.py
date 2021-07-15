@@ -35,7 +35,7 @@ def make_pdb_obj_list():
             #print(f"line: {line}\nidx: {idx}")
             code = line[idx[0]+1: idx[1]]
             type = line[idx[1]+1: idx[2]]
-            res = line[idx[2]+1: idx[2]]
+            res = line[idx[2]+1: idx[3]]
             eq = line.index("=")
             chain_str = line[idx[3]+1: eq]
             chains = unravel_chain(chain_str)
@@ -54,13 +54,13 @@ out, pdb_dict =make_pdb_obj_list()
 ltxt.write(out)
 
 
-
 #Failed attempt to use pickle to dump my protein object variables.
 print(f"pdb_dict: {pdb_dict}")
 with open("pdbs.var", "wb") as f:
     pickle.dump(pdb_dict,f)
     #print(f"dumped: {pdb_dict}")
 #f.close()
+print(f"number of samples: {len(pdb_dict)}")
 
 
 pdbs_txt.close()
