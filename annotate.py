@@ -11,6 +11,7 @@ os.chdir("PDB_files")
 for item in os.listdir("."):
     #creates list of chains with TPO occurence 
     tpo_list = list()
+    atp_list = list()
     if item.endswith("pdb"):
         #print(f"item name: {item}")
         with open(item, "r") as infile:
@@ -34,11 +35,15 @@ for item in os.listdir("."):
                         #makesure to only record tpos at position 160 of the chain
                         if seq_num == "160":
                             tpo_list.append(chain_id)
-                
+                    if molecule == "ATP":
+                        chain_id,j = nxt_itm(line,i)
+                        atp_list.append(chain_id)
                 elif start:
                     #end after reading the formulas
                     break
             pdb =  pdb_dict.get(item[:-4].upper())
+            pdb.atps = atp_list
+            #go through atps and the one 
             #no tpos
             if len(tpo_list) == 0:
                 pdb.group = ["inactive"]
@@ -55,11 +60,12 @@ for item in os.listdir("."):
                     if opened:
                         pdb.group.append("open")
                     else: pdb.group.append("closed")
-
-                pdb_dict[item[:-4].upper()] = pdb
+                
+            pdb_dict[item[:-4].upper()] = pdb
             #print(f"pdb: {pdb}")
             annotated_txt.write(repr(pdb) + "\n")
 os.chdir("..")
 with open("annotated.var", "wb") as f:
-    pickle.dump(pdb_dict,f)   
+    pickle.dump(pdb_dict,f)  
+f.close() 
 annotated_txt.close()

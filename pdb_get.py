@@ -1,16 +1,32 @@
 import os
 from helper import Pdb  as Pdb
-from helper import dumper as dumper
 import json
 import pickle
 
+def main():
+    pdbs_txt = open("pdbs.txt", "w")
+
+    os.chdir("PDB_files")
+    ltxt = open("searchlist.txt", "w")
+
+    os.chdir("..")
+    out, pdb_dict =make_pdb_obj_list(pdbs_txt)
+    #create list seperated by commas of pdb codes
+    ltxt.write(out)
+
+    #Failed attempt to use pickle to dump my protein object variables.
+    print(f"pdb_dict: {pdb_dict}")
+    with open("pdbs.var", "wb") as f:
+        pickle.dump(pdb_dict,f)
+        #print(f"dumped: {pdb_dict}")
+    #f.close()
+    print(f"number of samples: {len(pdb_dict)}")
+
+
+    pdbs_txt.close()
+    ltxt.close()
 #create empty pdb list of pdb objects
-pdbs_txt = open("pdbs.txt", "w")
 
-os.chdir("PDB_files")
-ltxt = open("searchlist.txt", "w")
-
-os.chdir("..")
 #sort into pdb objects
 def unravel_chain(chain_str):
     chains = list()
@@ -19,7 +35,7 @@ def unravel_chain(chain_str):
             pass
         else: chains.append(char)
     return chains
-def make_pdb_obj_list():
+def make_pdb_obj_list(pdbs_txt):
     """Function which takes the list of codes and extracts the pdb codes as objects and outputs 
     out: a string of codes separated by commas and spaces and pdb_list a list of pdb code objects"""
     pdb_dict = dict()
@@ -48,21 +64,7 @@ def make_pdb_obj_list():
     
     infile.close()
     return out, pdb_dict
+if __name__ == "__main__":
+    main()
 
-out, pdb_dict =make_pdb_obj_list()
-#create list seperated by commas of pdb codes
-ltxt.write(out)
-
-
-#Failed attempt to use pickle to dump my protein object variables.
-print(f"pdb_dict: {pdb_dict}")
-with open("pdbs.var", "wb") as f:
-    pickle.dump(pdb_dict,f)
-    #print(f"dumped: {pdb_dict}")
-#f.close()
-print(f"number of samples: {len(pdb_dict)}")
-
-
-pdbs_txt.close()
-ltxt.close()
 

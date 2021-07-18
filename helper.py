@@ -1,11 +1,11 @@
-import json
-
+import pickle
+import os
 
 #CLASSES
 #---------------------------------------------------
 #
 class Pdb:
-    def __init__(self, code, type, res, chains, length, group=None, structure=None, atoms =None, residues=None):
+    def __init__(self, code, type, res, chains, length, group=None, structure=None, atoms =None, residues=None, rms_cur=None, atps=[]):
         self.code = code
         self.type = type
         self.res = res
@@ -17,11 +17,17 @@ class Pdb:
         self.structure = structure
         self.atoms = atoms
         self.residues = residues
-    def __repr__(self, structure=False):
-        if structure:
-            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group}\nStructure: {self.structure}\nresidues: {self.residues}"
+        self.rms_cur = rms_cur
+        self.atps = atps
+    def __repr__(self, show=None,):
+        if show == "rms":
+            return f"rms_cur: {self.rms_cur}"
+        if show == "structure":
+            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}\nStructure: {self.structure}\nresidues: {self.residues}"
         else:
-            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group}"
+            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}"
+
+
 
 
 

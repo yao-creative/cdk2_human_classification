@@ -15,7 +15,6 @@ os.chdir("..")
 with open("annotated.var", "rb") as f:
     pdb_dict = pickle.load(f)
 
-
 opened_active_list = list()
 closed_inactive_list = list()
 opened_inactive_list = list()

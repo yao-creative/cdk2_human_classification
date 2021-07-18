@@ -20,8 +20,6 @@ with open("annotated.var","rb") as annotated_var:
     annotated_dict = pickle.load(annotated_var)
 #print(f"annotated_dict: {annotated_dict}")
 #print(f"annotated_dict[1e9h]: {annotated_dict['1E9H'].chains}")
-os.chdir("PDB_files")
-print(f"current: {os.getcwd()}")
 
 #cmd.load(f"{groups['opened_active'][0]}.pdb")
 group_list = [code.lower() for code in groups[str(sys.argv[2])]]
@@ -29,7 +27,7 @@ for i,code in enumerate(group_list):
     print(f"code: {code}")
     
     try:
-        cmd.load(f"{code}.pdb") 
+        cmd.load(f"PDB_files/{code}.pdb") 
         cmd.color("sand", f"/{code}") 
         chain =annotated_dict[code.upper()].chains[0]
         cmd.remove(f"{code} and (not Chain {chain})")
@@ -45,7 +43,7 @@ for i,code in enumerate(group_list):
         cmd.color("palegreen","sele")
     except:
         pass
-    if i==0:
+    if i==0: #we're expecting that each group_list is non-empty
         focus = code
         print(f"focus: {focus}")
     if i !=0: #align all the other structures to the first one

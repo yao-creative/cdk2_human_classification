@@ -1,420 +1,420 @@
-code: 1AQ1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1B38; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1B39; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 1BUH; type: X-ray res: 2.60A chains: ['A'] length: 298 group: None
-code: 1CKP; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None
-code: 1DI8; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 1DM2; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 1E1V; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 1E1X; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 1E9H; type: X-ray res: 2.50A chains: ['A', 'C'] length: 296 group: None
-code: 1F5Q; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 1FIN; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 1FQ1; type: X-ray res: 3.00A chains: ['B'] length: 298 group: None
-code: 1FVT; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 1FVV; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None
-code: 1G5S; type: X-ray res: 2.61A chains: ['A'] length: 298 group: None
-code: 1GIH; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None
-code: 1GII; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1GIJ; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 1GY3; type: X-ray res: 2.70A chains: ['A', 'C'] length: 296 group: None
-code: 1GZ8; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None
-code: 1H00; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 1H01; type: X-ray res: 1.79A chains: ['A'] length: 298 group: None
-code: 1H07; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 1H08; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 1H0V; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 1H0W; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 1H1P; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 1H1Q; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 1H1R; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 1H1S; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 1H24; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 1H25; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 1H26; type: X-ray res: 2.24A chains: ['A', 'C'] length: 298 group: None
-code: 1H27; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None
-code: 1H28; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None
-code: 1HCK; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 1HCL; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 1JST; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 1JSU; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 1JSV; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None
-code: 1JVP; type: X-ray res: 1.53A chains: ['P'] length: 298 group: None
-code: 1KE5; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 1KE6; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1KE7; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1KE8; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1KE9; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1OGU; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 1OI9; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 1OIQ; type: X-ray res: 2.31A chains: ['A'] length: 298 group: None
-code: 1OIR; type: X-ray res: 1.91A chains: ['A'] length: 298 group: None
-code: 1OIT; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 1OIU; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 1OIY; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 1OKV; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 1OKW; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 1OL1; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None
-code: 1OL2; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 1P2A; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None
-code: 1P5E; type: X-ray res: 2.22A chains: ['A', 'C'] length: 298 group: None
-code: 1PF8; type: X-ray res: 2.51A chains: ['A'] length: 298 group: None
-code: 1PKD; type: X-ray res: 2.30A chains: ['A', 'C'] length: 296 group: None
-code: 1PW2; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 1PXI; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 1PXJ; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 1PXK; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None
-code: 1PXL; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None
-code: 1PXM; type: X-ray res: 2.53A chains: ['A'] length: 298 group: None
-code: 1PXN; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None
-code: 1PXO; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None
-code: 1PXP; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 1PYE; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1QMZ; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None
-code: 1R78; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1URC; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 1URW; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 1V1K; type: X-ray res: 2.31A chains: ['A'] length: 298 group: None
-code: 1VYW; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 1VYZ; type: X-ray res: 2.21A chains: ['A'] length: 298 group: None
-code: 1W0X; type: X-ray res: 2.20A chains: ['C'] length: 298 group: None
-code: 1W8C; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None
-code: 1W98; type: X-ray res: 2.15A chains: ['A'] length: 297 group: None
-code: 1WCC; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 1Y8Y; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 1Y91; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None
-code: 1YKR; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 2A0C; type: X-ray res: 1.95A chains: ['X'] length: 298 group: None
-code: 2A4L; type: X-ray res: 2.40A chains: ['A'] length: 298 group: None
-code: 2B52; type: X-ray res: 1.88A chains: ['A'] length: 298 group: None
-code: 2B53; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 2B54; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 2B55; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 2BHE; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2BHH; type: X-ray res: 2.60A chains: ['A'] length: 298 group: None
-code: 2BKZ; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 2BPM; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 2BTR; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 2BTS; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None
-code: 2C4G; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None
-code: 2C5N; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 2C5O; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 2C5V; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None
-code: 2C5X; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None
-code: 2C5Y; type: X-ray res: 2.25A chains: ['A'] length: 298 group: None
-code: 2C68; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 2C69; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 2C6I; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 2C6K; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2C6L; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 2C6M; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2C6O; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 2C6T; type: X-ray res: 2.61A chains: ['A', 'C'] length: 298 group: None
-code: 2CCH; type: X-ray res: 1.70A chains: ['A', 'C'] length: 298 group: None
-code: 2CCI; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None
-code: 2CJM; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 2CLX; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 2DS1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 2DUV; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 2EXM; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 2FVD; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 2G9X; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 2HIC; type: Model res: - chains: ['A'] length: 298 group: None
-code: 2I40; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None
-code: 2IW6; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 2IW8; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 2IW9; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 2J9M; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None
-code: 2JGZ; type: X-ray res: 2.90A chains: ['A'] length: 288 group: None
-code: 2R3F; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None
-code: 2R3G; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None
-code: 2R3H; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None
-code: 2R3I; type: X-ray res: 1.28A chains: ['A'] length: 298 group: None
-code: 2R3J; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None
-code: 2R3K; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 2R3L; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None
-code: 2R3M; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 2R3N; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None
-code: 2R3O; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 2R3P; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None
-code: 2R3Q; type: X-ray res: 1.35A chains: ['A'] length: 298 group: None
-code: 2R3R; type: X-ray res: 1.47A chains: ['A'] length: 298 group: None
-code: 2R64; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 2UUE; type: X-ray res: 2.06A chains: ['A', 'C'] length: 298 group: None
-code: 2UZB; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None
-code: 2UZD; type: X-ray res: 2.72A chains: ['A', 'C'] length: 298 group: None
-code: 2UZE; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 2UZL; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 2UZN; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 2UZO; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 2V0D; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 2V22; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 2VTA; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 2VTH; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2VTI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 2VTJ; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 2VTL; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 2VTM; type: X-ray res: 2.25A chains: ['A'] length: 298 group: None
-code: 2VTN; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None
-code: 2VTO; type: X-ray res: 2.19A chains: ['A'] length: 298 group: None
-code: 2VTP; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None
-code: 2VTQ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2VTR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2VTS; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2VTT; type: X-ray res: 1.68A chains: ['A'] length: 298 group: None
-code: 2VU3; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 2VV9; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2W05; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2W06; type: X-ray res: 2.04A chains: ['A'] length: 298 group: None
-code: 2W17; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None
-code: 2W1H; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None
-code: 2WEV; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 2WFY; type: X-ray res: 2.53A chains: ['A', 'C'] length: 298 group: None
-code: 2WHB; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None
-code: 2WIH; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None
-code: 2WIP; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None
-code: 2WMA; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None
-code: 2WMB; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 2WPA; type: X-ray res: 2.51A chains: ['A', 'C'] length: 298 group: None
-code: 2WXV; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None
-code: 2X1N; type: X-ray res: 2.75A chains: ['A', 'C'] length: 298 group: None
-code: 2XMY; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 2XNB; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3BHT; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 3BHU; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None
-code: 3BHV; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 3DDP; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None
-code: 3DDQ; type: X-ray res: 1.80A chains: ['A', 'C'] length: 298 group: None
-code: 3DOG; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None
-code: 3EID; type: X-ray res: 3.15A chains: ['A', 'C'] length: 298 group: None
-code: 3EJ1; type: X-ray res: 3.22A chains: ['A', 'C'] length: 298 group: None
-code: 3EOC; type: X-ray res: 3.20A chains: ['A', 'C'] length: 298 group: None
-code: 3EZR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3EZV; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None
-code: 3F5X; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 3FZ1; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3IG7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3IGG; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3LE6; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3LFN; type: X-ray res: 2.28A chains: ['A'] length: 298 group: None
-code: 3LFQ; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None
-code: 3LFS; type: X-ray res: 2.40A chains: ['A'] length: 298 group: None
-code: 3MY5; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 3NS9; type: X-ray res: 1.78A chains: ['A'] length: 298 group: None
-code: 3PJ8; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None
-code: 3PXF; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3PXQ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3PXR; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3PXY; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3PXZ; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 3PY0; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3PY1; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None
-code: 3QHR; type: X-ray res: 2.17A chains: ['A', 'C'] length: 296 group: None
-code: 3QHW; type: X-ray res: 1.91A chains: ['A', 'C'] length: 296 group: None
-code: 3QL8; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3QQF; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QQG; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3QQH; type: X-ray res: 1.87A chains: ['A'] length: 298 group: None
-code: 3QQJ; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 3QQK; type: X-ray res: 1.86A chains: ['A'] length: 298 group: None
-code: 3QQL; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3QRT; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QRU; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3QTQ; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3QTR; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3QTS; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3QTU; type: X-ray res: 1.82A chains: ['A'] length: 298 group: None
-code: 3QTW; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3QTX; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3QTZ; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3QU0; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3QWJ; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QWK; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3QX2; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QX4; type: X-ray res: 1.92A chains: ['A'] length: 298 group: None
-code: 3QXO; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QXP; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QZF; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3QZG; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3QZH; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3QZI; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R1Q; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3R1S; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3R1Y; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3R28; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R6X; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R71; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R73; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 3R7E; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3R7I; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3R7U; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R7V; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3R7Y; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3R83; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R8L; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3R8M; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3R8P; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3R8U; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3R8V; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3R8Z; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3R9D; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3R9H; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 3R9N; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3R9O; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3RAH; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RAI; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 3RAK; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RAL; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RJC; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3RK5; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3RK7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3RK9; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3RKB; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3RM6; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 3RM7; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3RMF; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RNI; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 3ROY; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RPO; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RPR; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3RPV; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3RPY; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3RZB; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3S00; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3S0O; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3S1H; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 3S2P; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 3SQQ; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 3SW4; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 3SW7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 3TI1; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None
-code: 3TIY; type: X-ray res: 1.84A chains: ['A'] length: 298 group: None
-code: 3TIZ; type: X-ray res: 2.02A chains: ['A'] length: 298 group: None
-code: 3TNW; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 3ULI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 3UNJ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 3UNK; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 3WBL; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 4ACM; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None
-code: 4BCK; type: X-ray res: 2.05A chains: ['A', 'C'] length: 298 group: None
-code: 4BCM; type: X-ray res: 2.45A chains: ['A', 'C'] length: 298 group: None
-code: 4BCN; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None
-code: 4BCO; type: X-ray res: 2.05A chains: ['A', 'C'] length: 298 group: None
-code: 4BCP; type: X-ray res: 2.26A chains: ['A', 'C'] length: 298 group: None
-code: 4BCQ; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 4BGH; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None
-code: 4BZD; type: X-ray res: 1.83A chains: ['A'] length: 298 group: None
-code: 4CFM; type: X-ray res: 2.85A chains: ['A', 'C'] length: 298 group: None
-code: 4CFN; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None
-code: 4CFU; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None
-code: 4CFV; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 4CFW; type: X-ray res: 2.45A chains: ['A', 'C'] length: 298 group: None
-code: 4CFX; type: X-ray res: 3.50A chains: ['A', 'C'] length: 298 group: None
-code: 4D1X; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None
-code: 4D1Z; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 4EK3; type: X-ray res: 1.34A chains: ['A'] length: 298 group: None
-code: 4EK4; type: X-ray res: 1.26A chains: ['A'] length: 298 group: None
-code: 4EK5; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 4EK6; type: X-ray res: 1.52A chains: ['A'] length: 298 group: None
-code: 4EK8; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 4EOI; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 4EOJ; type: X-ray res: 1.65A chains: ['A', 'C'] length: 298 group: None
-code: 4EOK; type: X-ray res: 2.57A chains: ['A', 'C'] length: 297 group: None
-code: 4EOL; type: X-ray res: 2.40A chains: ['A', 'C'] length: 297 group: None
-code: 4EOM; type: X-ray res: 2.10A chains: ['A', 'C'] length: 297 group: None
-code: 4EON; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None
-code: 4EOO; type: X-ray res: 2.10A chains: ['A', 'C'] length: 297 group: None
-code: 4EOP; type: X-ray res: 1.99A chains: ['A', 'C'] length: 297 group: None
-code: 4EOQ; type: X-ray res: 2.15A chains: ['A', 'C'] length: 297 group: None
-code: 4EOR; type: X-ray res: 2.20A chains: ['A', 'C'] length: 297 group: None
-code: 4EOS; type: X-ray res: 2.57A chains: ['A', 'C'] length: 297 group: None
-code: 4ERW; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 4EZ3; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 4EZ7; type: X-ray res: 2.49A chains: ['A'] length: 298 group: None
-code: 4FKG; type: X-ray res: 1.51A chains: ['A'] length: 298 group: None
-code: 4FKI; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 4FKJ; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None
-code: 4FKL; type: X-ray res: 1.26A chains: ['A'] length: 298 group: None
-code: 4FKO; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None
-code: 4FKP; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 4FKQ; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 4FKR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 4FKS; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None
-code: 4FKT; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 4FKU; type: X-ray res: 1.47A chains: ['A'] length: 298 group: None
-code: 4FKV; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 4FKW; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 4FX3; type: X-ray res: 2.75A chains: ['A', 'C'] length: 298 group: None
-code: 4GCJ; type: X-ray res: 1.42A chains: ['A'] length: 298 group: None
-code: 4I3Z; type: X-ray res: 2.05A chains: ['A', 'C'] length: 296 group: None
-code: 4II5; type: X-ray res: 2.15A chains: ['A', 'C'] length: 298 group: None
-code: 4KD1; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 4LYN; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 4NJ3; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 4RJ3; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None
-code: 5A14; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 5AND; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 5ANE; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 5ANG; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 5ANI; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 5ANJ; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 5ANK; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None
-code: 5ANO; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 5CYI; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 5D1J; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None
-code: 5FP5; type: X-ray res: 2.16A chains: ['A'] length: 298 group: None
-code: 5FP6; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None
-code: 5IEV; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None
-code: 5IEX; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None
-code: 5IEY; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None
-code: 5IF1; type: X-ray res: 2.61A chains: ['A', 'C'] length: 298 group: None
-code: 5JQ5; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None
-code: 5JQ8; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None
-code: 5K4J; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 5L2W; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None
-code: 5LMK; type: X-ray res: 2.40A chains: ['A'] length: 298,C=1-296 group: None
-code: 5MHQ; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None
-code: 5NEV; type: X-ray res: 2.97A chains: ['A', 'C'] length: 298 group: None
-code: 5OO0; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None
-code: 5OO1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 5OO3; type: X-ray res: 1.73A chains: ['A'] length: 298 group: None
-code: 5OSJ; type: X-ray res: 1.83A chains: ['A'] length: 298 group: None
-code: 5OSM; type: X-ray res: 1.77A chains: ['A'] length: 298 group: None
-code: 5UQ1; type: X-ray res: 3.20A chains: ['A', 'C'] length: 298 group: None
-code: 5UQ2; type: X-ray res: 2.70A chains: ['A'] length: 298 group: None
-code: 5UQ3; type: X-ray res: 3.60A chains: ['A'] length: 298 group: None
-code: 6ATH; type: X-ray res: 1.82A chains: ['A'] length: 298 group: None
-code: 6GUB; type: X-ray res: 2.52A chains: ['A', 'C'] length: 298 group: None
-code: 6GUC; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None
-code: 6GUE; type: X-ray res: 1.99A chains: ['A', 'C'] length: 298 group: None
-code: 6GUF; type: X-ray res: 2.65A chains: ['A', 'C'] length: 298 group: None
-code: 6GUH; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None
-code: 6GUK; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None
-code: 6GVA; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None
-code: 6INL; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None
-code: 6JGM; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None
-code: 6OQI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None
-code: 6P3W; type: X-ray res: 2.54A chains: ['A', 'C'] length: 298 group: None
-code: 6Q3B; type: X-ray res: 1.11A chains: ['A'] length: 298 group: None
-code: 6Q3C; type: X-ray res: 1.29A chains: ['A'] length: 298 group: None
-code: 6Q3F; type: X-ray res: 1.18A chains: ['A'] length: 298 group: None
-code: 6Q48; type: X-ray res: 1.03A chains: ['A'] length: 298 group: None
-code: 6Q49; type: X-ray res: 1.00A chains: ['A'] length: 298 group: None
-code: 6Q4A; type: X-ray res: 1.13A chains: ['A'] length: 298 group: None
-code: 6Q4B; type: X-ray res: 1.12A chains: ['A'] length: 298 group: None
-code: 6Q4C; type: X-ray res: 1.73A chains: ['A'] length: 298 group: None
-code: 6Q4D; type: X-ray res: 1.07A chains: ['A'] length: 298 group: None
-code: 6Q4E; type: X-ray res: 1.06A chains: ['A'] length: 298 group: None
-code: 6Q4F; type: X-ray res: 1.21A chains: ['A'] length: 298 group: None
-code: 6Q4G; type: X-ray res: 0.98A chains: ['A'] length: 298 group: None
-code: 6Q4H; type: X-ray res: 1.00A chains: ['A'] length: 298 group: None
-code: 6Q4I; type: X-ray res: 1.11A chains: ['A'] length: 298 group: None
-code: 6Q4J; type: X-ray res: 1.05A chains: ['A'] length: 298 group: None
-code: 6Q4K; type: X-ray res: 1.06A chains: ['A'] length: 298 group: None
-code: 6RIJ; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None
-code: 6SG4; type: X-ray res: 2.43A chains: ['A', 'C'] length: 298 group: None
-code: 6YL1; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None
-code: 6YL6; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None
-code: 6YLK; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None
-code: 7B5L; type: EM res: 3.80A chains: ['L'] length: 298 group: None
-code: 7B5R; type: EM res: 3.80A chains: ['L'] length: 298 group: None
+code: 1AQ1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1B38; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1B39; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 1BUH; type: X-ray res: 2.60A chains: ['A'] length: 298 group: None atps: []
+code: 1CKP; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None atps: []
+code: 1DI8; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 1DM2; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 1E1V; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 1E1X; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 1E9H; type: X-ray res: 2.50A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 1F5Q; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1FIN; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1FQ1; type: X-ray res: 3.00A chains: ['B'] length: 298 group: None atps: []
+code: 1FVT; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 1FVV; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1G5S; type: X-ray res: 2.61A chains: ['A'] length: 298 group: None atps: []
+code: 1GIH; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None atps: []
+code: 1GII; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1GIJ; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 1GY3; type: X-ray res: 2.70A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 1GZ8; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None atps: []
+code: 1H00; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 1H01; type: X-ray res: 1.79A chains: ['A'] length: 298 group: None atps: []
+code: 1H07; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 1H08; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 1H0V; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 1H0W; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 1H1P; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H1Q; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H1R; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H1S; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H24; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H25; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H26; type: X-ray res: 2.24A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H27; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1H28; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1HCK; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 1HCL; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 1JST; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1JSU; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 1JSV; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None atps: []
+code: 1JVP; type: X-ray res: 1.53A chains: ['P'] length: 298 group: None atps: []
+code: 1KE5; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 1KE6; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1KE7; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1KE8; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1KE9; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1OGU; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OI9; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OIQ; type: X-ray res: 2.31A chains: ['A'] length: 298 group: None atps: []
+code: 1OIR; type: X-ray res: 1.91A chains: ['A'] length: 298 group: None atps: []
+code: 1OIT; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 1OIU; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OIY; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OKV; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OKW; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OL1; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1OL2; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1P2A; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None atps: []
+code: 1P5E; type: X-ray res: 2.22A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1PF8; type: X-ray res: 2.51A chains: ['A'] length: 298 group: None atps: []
+code: 1PKD; type: X-ray res: 2.30A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 1PW2; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 1PXI; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 1PXJ; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 1PXK; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None atps: []
+code: 1PXL; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None atps: []
+code: 1PXM; type: X-ray res: 2.53A chains: ['A'] length: 298 group: None atps: []
+code: 1PXN; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None atps: []
+code: 1PXO; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None atps: []
+code: 1PXP; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 1PYE; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1QMZ; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1R78; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1URC; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1URW; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 1V1K; type: X-ray res: 2.31A chains: ['A'] length: 298 group: None atps: []
+code: 1VYW; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 1VYZ; type: X-ray res: 2.21A chains: ['A'] length: 298 group: None atps: []
+code: 1W0X; type: X-ray res: 2.20A chains: ['C'] length: 298 group: None atps: []
+code: 1W8C; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None atps: []
+code: 1W98; type: X-ray res: 2.15A chains: ['A'] length: 297 group: None atps: []
+code: 1WCC; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 1Y8Y; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 1Y91; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None atps: []
+code: 1YKR; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 2A0C; type: X-ray res: 1.95A chains: ['X'] length: 298 group: None atps: []
+code: 2A4L; type: X-ray res: 2.40A chains: ['A'] length: 298 group: None atps: []
+code: 2B52; type: X-ray res: 1.88A chains: ['A'] length: 298 group: None atps: []
+code: 2B53; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 2B54; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 2B55; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 2BHE; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2BHH; type: X-ray res: 2.60A chains: ['A'] length: 298 group: None atps: []
+code: 2BKZ; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2BPM; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2BTR; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 2BTS; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None atps: []
+code: 2C4G; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2C5N; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2C5O; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2C5V; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2C5X; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2C5Y; type: X-ray res: 2.25A chains: ['A'] length: 298 group: None atps: []
+code: 2C68; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 2C69; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 2C6I; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 2C6K; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2C6L; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 2C6M; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2C6O; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 2C6T; type: X-ray res: 2.61A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2CCH; type: X-ray res: 1.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2CCI; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2CJM; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2CLX; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 2DS1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 2DUV; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 2EXM; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 2FVD; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 2G9X; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2HIC; type: Model res: - chains: ['A'] length: 298 group: None atps: []
+code: 2I40; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2IW6; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2IW8; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2IW9; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2J9M; type: X-ray res: 2.50A chains: ['A'] length: 298 group: None atps: []
+code: 2JGZ; type: X-ray res: 2.90A chains: ['A'] length: 288 group: None atps: []
+code: 2R3F; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None atps: []
+code: 2R3G; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None atps: []
+code: 2R3H; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None atps: []
+code: 2R3I; type: X-ray res: 1.28A chains: ['A'] length: 298 group: None atps: []
+code: 2R3J; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None atps: []
+code: 2R3K; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 2R3L; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None atps: []
+code: 2R3M; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 2R3N; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None atps: []
+code: 2R3O; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 2R3P; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None atps: []
+code: 2R3Q; type: X-ray res: 1.35A chains: ['A'] length: 298 group: None atps: []
+code: 2R3R; type: X-ray res: 1.47A chains: ['A'] length: 298 group: None atps: []
+code: 2R64; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 2UUE; type: X-ray res: 2.06A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2UZB; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2UZD; type: X-ray res: 2.72A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2UZE; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2UZL; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2UZN; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 2UZO; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 2V0D; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 2V22; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2VTA; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 2VTH; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2VTI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 2VTJ; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 2VTL; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 2VTM; type: X-ray res: 2.25A chains: ['A'] length: 298 group: None atps: []
+code: 2VTN; type: X-ray res: 2.20A chains: ['A'] length: 298 group: None atps: []
+code: 2VTO; type: X-ray res: 2.19A chains: ['A'] length: 298 group: None atps: []
+code: 2VTP; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None atps: []
+code: 2VTQ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2VTR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2VTS; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2VTT; type: X-ray res: 1.68A chains: ['A'] length: 298 group: None atps: []
+code: 2VU3; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 2VV9; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2W05; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2W06; type: X-ray res: 2.04A chains: ['A'] length: 298 group: None atps: []
+code: 2W17; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None atps: []
+code: 2W1H; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None atps: []
+code: 2WEV; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WFY; type: X-ray res: 2.53A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WHB; type: X-ray res: 2.90A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WIH; type: X-ray res: 2.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WIP; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WMA; type: X-ray res: 2.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WMB; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WPA; type: X-ray res: 2.51A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2WXV; type: X-ray res: 2.60A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2X1N; type: X-ray res: 2.75A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 2XMY; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 2XNB; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3BHT; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3BHU; type: X-ray res: 2.30A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3BHV; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3DDP; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3DDQ; type: X-ray res: 1.80A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3DOG; type: X-ray res: 2.70A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3EID; type: X-ray res: 3.15A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3EJ1; type: X-ray res: 3.22A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3EOC; type: X-ray res: 3.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3EZR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3EZV; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None atps: []
+code: 3F5X; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3FZ1; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3IG7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3IGG; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3LE6; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3LFN; type: X-ray res: 2.28A chains: ['A'] length: 298 group: None atps: []
+code: 3LFQ; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None atps: []
+code: 3LFS; type: X-ray res: 2.40A chains: ['A'] length: 298 group: None atps: []
+code: 3MY5; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3NS9; type: X-ray res: 1.78A chains: ['A'] length: 298 group: None atps: []
+code: 3PJ8; type: X-ray res: 1.96A chains: ['A'] length: 298 group: None atps: []
+code: 3PXF; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3PXQ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3PXR; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3PXY; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3PXZ; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 3PY0; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3PY1; type: X-ray res: 2.05A chains: ['A'] length: 298 group: None atps: []
+code: 3QHR; type: X-ray res: 2.17A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 3QHW; type: X-ray res: 1.91A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 3QL8; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3QQF; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QQG; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3QQH; type: X-ray res: 1.87A chains: ['A'] length: 298 group: None atps: []
+code: 3QQJ; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 3QQK; type: X-ray res: 1.86A chains: ['A'] length: 298 group: None atps: []
+code: 3QQL; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3QRT; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QRU; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3QTQ; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3QTR; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3QTS; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3QTU; type: X-ray res: 1.82A chains: ['A'] length: 298 group: None atps: []
+code: 3QTW; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3QTX; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3QTZ; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3QU0; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3QWJ; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QWK; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3QX2; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QX4; type: X-ray res: 1.92A chains: ['A'] length: 298 group: None atps: []
+code: 3QXO; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QXP; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QZF; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3QZG; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3QZH; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3QZI; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R1Q; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3R1S; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3R1Y; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3R28; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R6X; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R71; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R73; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 3R7E; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3R7I; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3R7U; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R7V; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3R7Y; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3R83; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R8L; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3R8M; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3R8P; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3R8U; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3R8V; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3R8Z; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3R9D; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3R9H; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 3R9N; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3R9O; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3RAH; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RAI; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 3RAK; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RAL; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RJC; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3RK5; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3RK7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3RK9; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3RKB; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3RM6; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 3RM7; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3RMF; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RNI; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 3ROY; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RPO; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RPR; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3RPV; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3RPY; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3RZB; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3S00; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3S0O; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3S1H; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 3S2P; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 3SQQ; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 3SW4; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 3SW7; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 3TI1; type: X-ray res: 1.99A chains: ['A'] length: 298 group: None atps: []
+code: 3TIY; type: X-ray res: 1.84A chains: ['A'] length: 298 group: None atps: []
+code: 3TIZ; type: X-ray res: 2.02A chains: ['A'] length: 298 group: None atps: []
+code: 3TNW; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 3ULI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 3UNJ; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 3UNK; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 3WBL; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 4ACM; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None atps: []
+code: 4BCK; type: X-ray res: 2.05A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BCM; type: X-ray res: 2.45A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BCN; type: X-ray res: 2.10A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BCO; type: X-ray res: 2.05A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BCP; type: X-ray res: 2.26A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BCQ; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4BGH; type: X-ray res: 1.95A chains: ['A'] length: 298 group: None atps: []
+code: 4BZD; type: X-ray res: 1.83A chains: ['A'] length: 298 group: None atps: []
+code: 4CFM; type: X-ray res: 2.85A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4CFN; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4CFU; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4CFV; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4CFW; type: X-ray res: 2.45A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4CFX; type: X-ray res: 3.50A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4D1X; type: X-ray res: 2.10A chains: ['A'] length: 298 group: None atps: []
+code: 4D1Z; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 4EK3; type: X-ray res: 1.34A chains: ['A'] length: 298 group: None atps: []
+code: 4EK4; type: X-ray res: 1.26A chains: ['A'] length: 298 group: None atps: []
+code: 4EK5; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 4EK6; type: X-ray res: 1.52A chains: ['A'] length: 298 group: None atps: []
+code: 4EK8; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 4EOI; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4EOJ; type: X-ray res: 1.65A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4EOK; type: X-ray res: 2.57A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOL; type: X-ray res: 2.40A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOM; type: X-ray res: 2.10A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EON; type: X-ray res: 2.40A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4EOO; type: X-ray res: 2.10A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOP; type: X-ray res: 1.99A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOQ; type: X-ray res: 2.15A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOR; type: X-ray res: 2.20A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4EOS; type: X-ray res: 2.57A chains: ['A', 'C'] length: 297 group: None atps: []
+code: 4ERW; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 4EZ3; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 4EZ7; type: X-ray res: 2.49A chains: ['A'] length: 298 group: None atps: []
+code: 4FKG; type: X-ray res: 1.51A chains: ['A'] length: 298 group: None atps: []
+code: 4FKI; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 4FKJ; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None atps: []
+code: 4FKL; type: X-ray res: 1.26A chains: ['A'] length: 298 group: None atps: []
+code: 4FKO; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None atps: []
+code: 4FKP; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 4FKQ; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 4FKR; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 4FKS; type: X-ray res: 1.55A chains: ['A'] length: 298 group: None atps: []
+code: 4FKT; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 4FKU; type: X-ray res: 1.47A chains: ['A'] length: 298 group: None atps: []
+code: 4FKV; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 4FKW; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 4FX3; type: X-ray res: 2.75A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4GCJ; type: X-ray res: 1.42A chains: ['A'] length: 298 group: None atps: []
+code: 4I3Z; type: X-ray res: 2.05A chains: ['A', 'C'] length: 296 group: None atps: []
+code: 4II5; type: X-ray res: 2.15A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 4KD1; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 4LYN; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 4NJ3; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 4RJ3; type: X-ray res: 1.63A chains: ['A'] length: 298 group: None atps: []
+code: 5A14; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 5AND; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 5ANE; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 5ANG; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 5ANI; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 5ANJ; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 5ANK; type: X-ray res: 1.90A chains: ['A'] length: 298 group: None atps: []
+code: 5ANO; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 5CYI; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 5D1J; type: X-ray res: 1.80A chains: ['A'] length: 298 group: None atps: []
+code: 5FP5; type: X-ray res: 2.16A chains: ['A'] length: 298 group: None atps: []
+code: 5FP6; type: X-ray res: 1.85A chains: ['A'] length: 298 group: None atps: []
+code: 5IEV; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None atps: []
+code: 5IEX; type: X-ray res: 2.03A chains: ['A'] length: 298 group: None atps: []
+code: 5IEY; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None atps: []
+code: 5IF1; type: X-ray res: 2.61A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 5JQ5; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None atps: []
+code: 5JQ8; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None atps: []
+code: 5K4J; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 5L2W; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None atps: []
+code: 5LMK; type: X-ray res: 2.40A chains: ['A'] length: 298,C=1-296 group: None atps: []
+code: 5MHQ; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None atps: []
+code: 5NEV; type: X-ray res: 2.97A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 5OO0; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
+code: 5OO1; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 5OO3; type: X-ray res: 1.73A chains: ['A'] length: 298 group: None atps: []
+code: 5OSJ; type: X-ray res: 1.83A chains: ['A'] length: 298 group: None atps: []
+code: 5OSM; type: X-ray res: 1.77A chains: ['A'] length: 298 group: None atps: []
+code: 5UQ1; type: X-ray res: 3.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 5UQ2; type: X-ray res: 2.70A chains: ['A'] length: 298 group: None atps: []
+code: 5UQ3; type: X-ray res: 3.60A chains: ['A'] length: 298 group: None atps: []
+code: 6ATH; type: X-ray res: 1.82A chains: ['A'] length: 298 group: None atps: []
+code: 6GUB; type: X-ray res: 2.52A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6GUC; type: X-ray res: 2.00A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6GUE; type: X-ray res: 1.99A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6GUF; type: X-ray res: 2.65A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6GUH; type: X-ray res: 1.50A chains: ['A'] length: 298 group: None atps: []
+code: 6GUK; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None atps: []
+code: 6GVA; type: X-ray res: 2.15A chains: ['A'] length: 298 group: None atps: []
+code: 6INL; type: X-ray res: 1.75A chains: ['A'] length: 298 group: None atps: []
+code: 6JGM; type: X-ray res: 2.30A chains: ['A'] length: 298 group: None atps: []
+code: 6OQI; type: X-ray res: 2.00A chains: ['A'] length: 298 group: None atps: []
+code: 6P3W; type: X-ray res: 2.54A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6Q3B; type: X-ray res: 1.11A chains: ['A'] length: 298 group: None atps: []
+code: 6Q3C; type: X-ray res: 1.29A chains: ['A'] length: 298 group: None atps: []
+code: 6Q3F; type: X-ray res: 1.18A chains: ['A'] length: 298 group: None atps: []
+code: 6Q48; type: X-ray res: 1.03A chains: ['A'] length: 298 group: None atps: []
+code: 6Q49; type: X-ray res: 1.00A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4A; type: X-ray res: 1.13A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4B; type: X-ray res: 1.12A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4C; type: X-ray res: 1.73A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4D; type: X-ray res: 1.07A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4E; type: X-ray res: 1.06A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4F; type: X-ray res: 1.21A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4G; type: X-ray res: 0.98A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4H; type: X-ray res: 1.00A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4I; type: X-ray res: 1.11A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4J; type: X-ray res: 1.05A chains: ['A'] length: 298 group: None atps: []
+code: 6Q4K; type: X-ray res: 1.06A chains: ['A'] length: 298 group: None atps: []
+code: 6RIJ; type: X-ray res: 2.20A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6SG4; type: X-ray res: 2.43A chains: ['A', 'C'] length: 298 group: None atps: []
+code: 6YL1; type: X-ray res: 1.66A chains: ['A'] length: 298 group: None atps: []
+code: 6YL6; type: X-ray res: 1.70A chains: ['A'] length: 298 group: None atps: []
+code: 6YLK; type: X-ray res: 1.65A chains: ['A'] length: 298 group: None atps: []
+code: 7B5L; type: EM res: 3.80A chains: ['L'] length: 298 group: None atps: []
+code: 7B5R; type: EM res: 3.80A chains: ['L'] length: 298 group: None atps: []
