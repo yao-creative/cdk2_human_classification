@@ -3,7 +3,7 @@ def main():
     with open("alignment_dict.var","rb") as alignment_dict_var:
         alignment_dict = pickle.load(alignment_dict_var)
     out=get_alignment_indices(alignment_dict)
-    with open("common_indicies.txt","w") as infile1:
+    with open("common_indices.txt","w") as infile1:
         infile1.write(str(out))
         infile1.close()
     with open("common_indices.var","wb") as infile2:
