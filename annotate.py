@@ -1,6 +1,7 @@
 import os
 from helper import nxt_itm as nxt_itm
 import pickle 
+from get_structure import get_structure
 
 annotated_txt = open("annotated.txt", "w")
 
@@ -37,7 +38,7 @@ for item in os.listdir("."):
                             tpo_list.append(chain_id)
                     if molecule == "ATP":
                         chain_id,j = nxt_itm(line,i)
-                        atp_list.append(chain_id)
+                        atp_list.append(chain_id[0])
                 elif start:
                     #end after reading the formulas
                     break
@@ -63,9 +64,12 @@ for item in os.listdir("."):
                 
             pdb_dict[item[:-4].upper()] = pdb
             #print(f"pdb: {pdb}")
-            annotated_txt.write(repr(pdb) + "\n")
+
+get_structure(pdb_dict)
+for pdb in pdb_dict:
+    annotated_txt.write(repr(pdb_dict[pdb]) + "\n")
 os.chdir("..")
 with open("annotated.var", "wb") as f:
-    pickle.dump(pdb_dict,f)  
+    pickle.dump(pdb_dict,f)  #some how after getting the structures the dump has become heavy duty
 f.close() 
 annotated_txt.close()

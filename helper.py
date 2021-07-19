@@ -14,10 +14,10 @@ class Pdb:
         self.file =None
         self.group = group
         #using store bio python structure feature as one of it's attributes
-        self.structure = structure
-        self.atoms = atoms
-        self.residues = residues
-        self.rms_cur = rms_cur
+        self.structure = structure #biopython pdbparser.parser.get_structure
+        self.atoms = atoms #undefined so far
+        self.residues = residues #dictionary where keys are chains and values are residues
+        self.rms_cur = rms_cur #rms distance after aligned between the align choice
         self.atps = atps
     def __repr__(self, show=None,):
         if show == "rms":

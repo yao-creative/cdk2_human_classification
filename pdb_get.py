@@ -56,7 +56,14 @@ def make_pdb_obj_list(pdbs_txt):
             chain_str = line[idx[3]+1: eq]
             chains = unravel_chain(chain_str)
             length = line[eq+3:len(line)-2]
-            curr =Pdb(code,type,res,chains,length)
+            len_str = ""
+            for char in length:
+                try:
+                    len_str+=char
+                    int(len_str) #make sure length is an integer
+                except:
+                    break
+            curr =Pdb(code,type,res,chains,len_str)
             #pdb_dictionary with code as the key
             pdb_dict[code] =  curr
             out += code.lower()+", "

@@ -21,9 +21,11 @@ echo "annotating"
 python3 annotate.py
 open annotated.txt
 
+python3 annotate_chains.py
+
 
 #render the groups on pymol
-cd structures
+"""cd structures
 ls *.txt
 split_groups=$?
 if [ $split_groups != 0 ] ; then
@@ -32,4 +34,6 @@ fi
 
 pymol pml_script.py opened_active
 pymol pml_script.py closed_inactive
-pymol pml_script.py opened_inactive
+pymol pml_script.py opened_inactive"""
+
+pymol pymol_script_all.py

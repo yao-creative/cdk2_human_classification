@@ -372,7 +372,7 @@ code: 5JQ5; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None atps: [
 code: 5JQ8; type: X-ray res: 1.94A chains: ['A'] length: 298 group: None atps: []
 code: 5K4J; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
 code: 5L2W; type: X-ray res: 2.80A chains: ['A'] length: 298 group: None atps: []
-code: 5LMK; type: X-ray res: 2.40A chains: ['A'] length: 298,C=1-296 group: None atps: []
+code: 5LMK; type: X-ray res: 2.40A chains: ['A'] length: 298, group: None atps: []
 code: 5MHQ; type: X-ray res: 1.30A chains: ['A'] length: 298 group: None atps: []
 code: 5NEV; type: X-ray res: 2.97A chains: ['A', 'C'] length: 298 group: None atps: []
 code: 5OO0; type: X-ray res: 1.60A chains: ['A'] length: 298 group: None atps: []
