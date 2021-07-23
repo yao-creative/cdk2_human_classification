@@ -2,7 +2,7 @@ annotated.var
 annotated_chains.var
 annotated_chains.txt
 annotate_chains.py
-PDB_files/test.py
-PDB_files/test2.py
+/PDB_files/test.py
+/PDB_files/test2.py
 dir.py
 all_aligned.pse
