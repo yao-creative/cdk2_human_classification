@@ -1,15 +1,13 @@
 # CDK2 Classification
 
+
+## Description:
+Goes to the internet retrieves uniprot codes of Human CDK2 conformations, runs a script to obtain the pdb files and model them on pymol while aligning all of them to one of the conformation then outputs RMS matrix of the conformation vs other conformations.
+## Requirements:
+Python3, Pymol
 ## Instructions:
-### (if pdb files already downloaded skip first 5 steps)
+### go to terminal and type ```bash run.sh```
 
-### 1) Go to uniprot to download the text version of the human cdk2 proteins entry list.
-### 2) Run pdb_list.py which gets CDK2 structures from uniprot txt
-### 3) Run pdb_get.py which creates a list of obj PDB and also PDB codes in a txt usable format for the batch_download.sh
-### 4) go into PDB_files and run ```./batch_download.sh -f searchlist.txt -p``` on the terminal to get the gzip files.
-### 5) To unzip the files run uncompress.py
-
-### 6) To annotate the files, run annotate.py and it'll out put annotated.txt an annotated version of the files
 
 
 ## Python File descriptions:

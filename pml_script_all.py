@@ -2,15 +2,18 @@ from pymol import cmd
 import os
 import pickle
 from best_align import align_choice
-
+import numpy as np
+from alignment_indices import collusion_list
 def main():
-    print(f"main running")
+    print(f"started")
     #load files
     with open("annotated.var","rb") as annotated_var:
         annotated_dict = pickle.load(annotated_var)
-    
+    print("loaded 1")
+    annotated_var.close()
     #pick suitable choice to align the rest of the conformations to, choice will be a CDK2 chain of a conformation
-    choice = align_choice()
+    print(f"done loading chains!")
+    choice = align_choice(annotated_dict)
     print(f"choice: {choice}")
     #load and align the chains of the chosen focus
     parent_code = choice[0][:-2]
@@ -27,6 +30,13 @@ def main():
             cmd.delete(parent_code)
     #iterate and align the rest of the conformations
     iterate_align(choice,parent_code,annotated_dict)
+    remove_het()
+    cmd.deselect()
+    cmd.save("all_aligned.pse", "all_aligned")
+    print(f"alignment state saved")
+    cmd.deselect()
+    #rmsd_matrix(annotated_dict)
+    return
 
 def iterate_align(choice,choice_parent,annotated_dict, res_threshold=(False,None)):
     """Takes the choice of alignment code, the parent of the choice, 
@@ -58,15 +68,56 @@ def iterate_align(choice,choice_parent,annotated_dict, res_threshold=(False,None
         except:
             pass
     return skipped_list
+ 
+def rmsd_matrix(chains_list):
+    n = len(chains_list)
+    order = list()
+    matrix = np.zeros(shape=(n,n))
+    cmd.alter("all", "segi=''")
+    cmd.alter("all", "chain=''")
+    for i,chain_id in enumerate(chains_list):
+        for j,other_id in enumerate(chains_list):
+            ############################
+            #modify matrix entry
+            matrix[i][j]= cmd.rms_cur(f"/{chain_id}////CA",f"/{other_id}////CA",matchmaker=4)
+            print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")  
+    print(f"matrix: {matrix}")
+    with open("matrix.var","wb") as infile1:
+        pickle.dump(matrix,infile1)
+        infile1.close()
+    with open("matrix.txt","w") as infile2:
+        for row in matrix:
+            infile2.write(str(row))
+        infile2.close()
+        
+            
+
+        #assuming it goest through the dictionary in the same order
+def remove_het():
+    with open("chains_list.var","rb") as chains_list_var:
+        chains_list = pickle.load(chains_list_var)
+    for chain_id in chains_list:
+        try:
+            cmd.select(f"/{chain_id}///298:/")      
+            cmd.remove("sele")
+        except:
+            pass
+    cmd.remove("resn ATP")
+    cmd.remove("resn MG")
 
 
 
 
-    
-def rmsd_matrix():
-    pass
-print("hi1")
-main()       
+
+
+
+print(f"started")
+with open("chains_list.var","rb") as chains_list_var:
+    chains_list= pickle.load(chains_list_var)
+cmd.load("all_aligned.pse")
+print(f"loaded all align!")
+rmsd_matrix(chains_list) 
+main()
 print("hi")
 
 

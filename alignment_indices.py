@@ -1,7 +1,13 @@
 import pickle
 import math
 import list_compare
-#load files
+
+def main(choice, choice_parent, method= "cl", dump= True):
+    with open("annotated.var","rb") as annotated_var:
+        annotated_dict = pickle.load(annotated_var)
+    annotated_var.close()
+    alignment_dict = get_alignment(choice, choice_parent,annotated_dict,method,dump)
+    list_compare.main()
 
 #################################################################
 
@@ -86,14 +92,10 @@ def get_alignment(choice,choice_parent,annotated_dict,method="nw", dump = True):
     print("alignment_dict dumped!")
     #print(f"dumped! alignment indices starting")
     #return alignment_dict
-def main(choice, choice_parent, method= "cl", dump= True):
-    with open("annotated.var","rb") as annotated_var:
-        annotated_dict = pickle.load(annotated_var)
-    annotated_var.close()
-    alignment_dict = get_alignment(choice, choice_parent,annotated_dict,method,dump)
-    list_compare.main()
+
     
-main("4EOJ_A","4EOJ")
+if __name__ == "__main__":
+    main("4EOJ_A","4EOJ")
 
 #print(collusion_list(["a","b", "c", "d", "d"], ["f","a","b","e","c"]))
 

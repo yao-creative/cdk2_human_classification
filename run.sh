@@ -21,7 +21,7 @@ echo "annotating"
 python3 annotate.py
 open annotated.txt
 
-python3 annotate_chains.py
+#python3 annotate_chains.py
 
 
 #render the groups on pymol

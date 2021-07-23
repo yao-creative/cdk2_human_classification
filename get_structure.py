@@ -22,8 +22,7 @@ def get_structure(annotated_dict):
                 #print('>some_header\n',''.join(seq))
         """models =list(structure.get_models())
         print(f"structure.get_models(): {models}")
-        print(f"models[0]: {models[0]}")
-        residues = [list(chain.get_residues) for chain in [list(structure.get_models().get_chains())]]"""
+        print(f"models[0]: {models[0]}")"""
         atoms = [list(residue) for residue in residues]
         conformation =annotated_dict[item.upper()]
         conformation.structure= structure
@@ -31,4 +30,4 @@ def get_structure(annotated_dict):
         conformation.atoms = atoms
         annotated_dict[item.upper()]= conformation
         print(f"{item} success!\nResidue: {residues}")
-    
+
