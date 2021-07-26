@@ -5,7 +5,7 @@ import os
 #---------------------------------------------------
 #
 class Pdb:
-    def __init__(self, code, type, res, chains, length, group=None, structure=None, atoms =None, residues=None, rms_cur=None, atps=[]):
+    def __init__(self, code, type, res, chains, length, tpo_list = None, group=None, structure=None, atoms =None, residues=None, rms_cur=None, atps=[]):
         self.code = code
         self.type = type
         self.res = res
@@ -19,11 +19,12 @@ class Pdb:
         self.residues = residues #dictionary where keys are chains and values are residues
         self.rms_cur = rms_cur #rms distance after aligned between the align choice
         self.atps = atps
+        self.tpo_list = tpo_list
     def __repr__(self, show=None,):
         if show == "rms":
             return f"rms_cur: {self.rms_cur}"
         if show == "structure":
-            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}\nStructure: {self.structure}\nresidues: {self.residues}"
+            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}\nStructure: {self.structure}\nresidues: {self.residues} tpo_list: {tpo_list}"
         else:
             return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}"
 

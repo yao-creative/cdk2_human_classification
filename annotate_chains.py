@@ -1,7 +1,6 @@
 """after annotate.py, split each of the multichain conformation into their chains"""
 import pickle
 import helper
-import json
 import copy
 
 def main():
@@ -17,12 +16,20 @@ def main():
             #print(f"conformation chains: {conformation.chains}")
             conformation_chain = copy.deepcopy(conformation)
             conformation_chain.chains = [chain]
-
+            conformation_chain.group = list()
+            if chain in conformation.tpo_list:
+                conformation_chain.group.append("active")
+            else:
+                conformation_chain.group.append("inactive")
+            if "open" in conformation.group:
+                conformation_chain.group.append("open")
+            else:
+                conformation_chain.group.append("closed")
             if chain in conformation_chain.atps:
                 conformation_chain.atps = [chain]
             else:
                 conformation_chain.atps = []
-            conformation_chain.residues = conformation.residues[chain] #might not be needed 
+            #conformation_chain.residues = conformation.residues[chain] #might not be needed 
             #since already stored as dictionary in the annotated_dict
             conformation_chain.code = f"{code}_{chain}"
             annotated_chains_txt.write(repr(conformation_chain) + "\n")

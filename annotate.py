@@ -42,8 +42,10 @@ for item in os.listdir("."):
                 elif start:
                     #end after reading the formulas
                     break
+            
             pdb =  pdb_dict.get(item[:-4].upper())
             pdb.atps = atp_list
+            pdb.tpo_list = tpo_list
             #go through atps and the one 
             #no tpos
             if len(tpo_list) == 0:

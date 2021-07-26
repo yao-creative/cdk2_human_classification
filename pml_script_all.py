@@ -111,14 +111,14 @@ def remove_het():
 
 
 
-print(f"started")
-with open("chains_list.var","rb") as chains_list_var:
-    chains_list= pickle.load(chains_list_var)
-cmd.load("all_aligned.pse")
-print(f"loaded all align!")
-rmsd_matrix(chains_list) 
-main()
-print("hi")
+# print(f"started")
+# with open("chains_list.var","rb") as chains_list_var:
+#     chains_list= pickle.load(chains_list_var)
+# cmd.load("all_aligned.pse")
+# print(f"loaded all align!")
+# rmsd_matrix(chains_list) 
+# main()
+# print("hi")
 
 
 

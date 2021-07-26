@@ -1,5 +1,3 @@
-import os
-import pickle
 from Bio import PDB
 from Bio import Align
 #Non functionining program, ignore for the momet

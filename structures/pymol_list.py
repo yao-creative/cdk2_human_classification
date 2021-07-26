@@ -5,32 +5,32 @@ sys.path.insert(1, "../")
 import helper
 pymol_list = open("pymol_list.txt", "w")
 opened_active = open("opened_active.txt", "w")
-closed_inactive = open("closed_active.txt", "w")
+closed_inactive = open("closed_inactive.txt", "w")
 opened_inactive = open("opened_inactive.txt", "w")
 opened_active_var = open("opened_active.var", "wb")
-closed_inactive_var = open("closed_active.var", "wb")
+closed_inactive_var = open("closed_inactive.var", "wb")
 opened_inactive_var = open("opened_inactive.var", "wb")
 
 os.chdir("..")
-with open("annotated.var", "rb") as f:
-    pdb_dict = pickle.load(f)
+with open("annotated_chains.var", "rb") as f:
+    chains_dict = pickle.load(f)
 
 opened_active_list = list()
 closed_inactive_list = list()
 opened_inactive_list = list()
-for pdb in pdb_dict:
-    pdb =pdb_dict[pdb]
-    pymol_list.write(pdb.code + " ")
-    if "open" in pdb.group:
-        if "active" in pdb.group:
-            opened_active.write(pdb.code + " ")
-            opened_active_list.append(pdb.code)
+for chains_code in chains_dict:
+    conformation_chain =chains_dict[chains_code]
+    pymol_list.write(f"{conformation_chain.code}" + " ")
+    if "open" in conformation_chain.group:
+        if "active" in conformation_chain.group:
+            opened_active.write(conformation_chain.code + " ")
+            opened_active_list.append(conformation_chain.code)
         else:
-            opened_inactive.write(pdb.code + " ")
-            opened_inactive_list.append(pdb.code)
+            opened_inactive.write(conformation_chain.code + " ")
+            opened_inactive_list.append(conformation_chain.code)
     else:
-        closed_inactive.write(pdb.code + " ")
-        closed_inactive_list.append(pdb.code)
+        closed_inactive.write(conformation_chain.code + " ")
+        closed_inactive_list.append(conformation_chain.code)
 
 pickle.dump(opened_active_list, opened_active_var)
 pickle.dump(opened_inactive_list, opened_inactive_var)
