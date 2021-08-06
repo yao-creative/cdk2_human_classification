@@ -23,6 +23,8 @@ python3 annotate.py
 echo "annotating chains"
 python3 annotate_chains.py
 
+cd structures
+python3 pymol_list.py
 #python3 annotate_chains.py
 
 

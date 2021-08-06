@@ -1,11 +1,80 @@
 from pymol import cmd
 import os
 import pickle
-from best_align import align_choice
 import numpy as np
-from alignment_indices import collusion_list
+#from alignment_indices import collusion_list
+from multiprocessing import Array, Pool
+
+#print("running")
 def main():
+    #Note if we want to redo alignment, makes sure that the file all_aligned.pse is removed
     print(f"started")
+    lsdir = os.listdir(".")
+    print(f"lsdir: {lsdir}")
+    if "all_aligned.pse" not in lsdir:
+        align_all()
+    if "chains_list.var" not in lsdir:
+        get_chains_list()    
+    with open("chains_list.var","rb") as chains_list_var:
+        chains_list= pickle.load(chains_list_var)
+    cmd.load("all_aligned.pse")
+    print(f"loaded all align!")
+    rmsd_matrix(chains_list)
+    print(f"program finished")
+
+
+
+
+
+def get_chains_list():
+    """Get's chains list"""
+
+    print(f"getting chains list")
+    with open("pdbs.var", "rb") as infile:
+        dictionary = pickle.load(infile)
+    out = list()
+    infile2= open("chains_list.txt", "w")
+    for code in dictionary:
+        for chain in dictionary[code].chains:
+            out.append(f"{code}_{chain}")
+            infile2.write(f"{code}_{chain}\n") 
+    with open("chains_list.var", "wb") as infile3:
+        pickle.dump(out,infile3)
+    infile.close()
+    infile2.close()
+    infile3.close()
+
+
+
+
+
+def align_choice(annotated_dict):
+    """finds best conformation to align to: (less than 2.0 angstroms in resolution and natural ligand)"""
+    res_list = list()
+    for code in annotated_dict:
+        for chain in annotated_dict[code].chains:
+            print(f"align choice: {code}")
+            conformation = annotated_dict[code]
+            #print(f"code: {code} resolution: {conformation.res} atps: {len(conformation.atps)}")
+            if code.lower() == "4eoj_a":
+                print(f"4eoj_a: {repr(conformation)}")
+            try:
+                if float(conformation.res[:-1]) < 2.0 and chain in conformation.atps:
+                    res_list.append((code, chain, conformation.res))
+            except:
+                continue
+    print(f"res_list: {res_list}")
+    choice = min(res_list, key = lambda tup: tup[2])
+    return (f"{choice[0]}_{choice[1]}", choice[2])
+
+
+
+
+def align_all():
+    """opens the annotated dictionary and finds the best choice 
+    to align to and then in pymol calls align on all of the conformations"""
+
+    print(f"align all")
     #load files
     with open("annotated.var","rb") as annotated_var:
         annotated_dict = pickle.load(annotated_var)
@@ -36,7 +105,8 @@ def main():
     print(f"alignment state saved")
     cmd.deselect()
     #rmsd_matrix(annotated_dict)
-    return
+
+
 
 def iterate_align(choice,choice_parent,annotated_dict, res_threshold=(False,None)):
     """Takes the choice of alignment code, the parent of the choice, 
@@ -69,6 +139,8 @@ def iterate_align(choice,choice_parent,annotated_dict, res_threshold=(False,None
             pass
     return skipped_list
  
+
+
 def rmsd_matrix(chains_list):
     n = len(chains_list)
     order = list()
@@ -89,10 +161,9 @@ def rmsd_matrix(chains_list):
         for row in matrix:
             infile2.write(str(row))
         infile2.close()
-        
-            
-
         #assuming it goest through the dictionary in the same order
+
+
 def remove_het():
     with open("chains_list.var","rb") as chains_list_var:
         chains_list = pickle.load(chains_list_var)
@@ -107,16 +178,11 @@ def remove_het():
 
 
 
+#print(f"right before if")
+
+main()
 
 
-
-
-# print(f"started")
-# with open("chains_list.var","rb") as chains_list_var:
-#     chains_list= pickle.load(chains_list_var)
-# cmd.load("all_aligned.pse")
-# print(f"loaded all align!")
-# rmsd_matrix(chains_list) 
 # main()
 # print("hi")
 

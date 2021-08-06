@@ -95,6 +95,7 @@ def get_alignment(choice,choice_parent,annotated_dict,method="nw", dump = True):
 
     
 if __name__ == "__main__":
+    
     main("4EOJ_A","4EOJ")
 
 #print(collusion_list(["a","b", "c", "d", "d"], ["f","a","b","e","c"]))

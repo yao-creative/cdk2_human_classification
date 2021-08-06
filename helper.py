@@ -1,5 +1,3 @@
-import pickle
-import os
 
 #CLASSES
 #---------------------------------------------------
@@ -20,11 +18,11 @@ class Pdb:
         self.rms_cur = rms_cur #rms distance after aligned between the align choice
         self.atps = atps
         self.tpo_list = tpo_list
-    def __repr__(self, show=None,):
+    def __repr__(self, show=None):
         if show == "rms":
             return f"rms_cur: {self.rms_cur}"
         if show == "structure":
-            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}\nStructure: {self.structure}\nresidues: {self.residues} tpo_list: {tpo_list}"
+            return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}\nStructure: {self.structure}\nresidues: {self.residues} tpo_list: {self.tpo_list}"
         else:
             return f"code: {self.code}; type: {self.type} res: {self.res} chains: {self.chains} length: {self.length} group: {self.group} atps: {self.atps}"
 
@@ -48,9 +46,3 @@ def nxt_itm(line,idx):
     while line[j] != " " and k<len(line):
         j+=1
     return line[k:j],j
-
-def dumper(obj):
-    try:
-        return obj.toJSON()
-    except:
-        return obj.__dict__
