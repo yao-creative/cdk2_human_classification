@@ -3,26 +3,28 @@ import os
 import pickle
 import numpy as np
 #from alignment_indices import collusion_list
-from multiprocessing import Array, Pool
+from multiprocessing import Pool
+import time
 
 #print("running")
 def main():
     #Note if we want to redo alignment, makes sure that the file all_aligned.pse is removed
     print(f"started")
     lsdir = os.listdir(".")
-    print(f"lsdir: {lsdir}")
+    #print(f"lsdir: {lsdir}")
     if "all_aligned.pse" not in lsdir:
         align_all()
     if "chains_list.var" not in lsdir:
         get_chains_list()    
     with open("chains_list.var","rb") as chains_list_var:
         chains_list= pickle.load(chains_list_var)
+    mat = comparission_mat(chains_list)
+    #print(f"mat: {mat}")
     cmd.load("all_aligned.pse")
     print(f"loaded all align!")
-    rmsd_matrix(chains_list)
+    #rmsd_matrix(chains_list)
+    rmsd_matrix2(mat)
     print(f"program finished")
-
-
 
 
 
@@ -43,8 +45,6 @@ def get_chains_list():
     infile.close()
     infile2.close()
     infile3.close()
-
-
 
 
 
@@ -176,8 +176,61 @@ def remove_het():
     cmd.remove("resn ATP")
     cmd.remove("resn MG")
 
+def comparission_mat(chains_list):
+    """Creates a matrix of tuples which have the two chain ids to compare"""
+    matrix = list()
+    for i,chain in enumerate(chains_list):
+        row = list()
+        for j in range(i+1):
+            row.append((chains_list[i],chains_list[j]))
+        for k in range(i+1,len(chains_list)-1):
+            row.append((None,None))
+        matrix.append(row)
+    #print(f"data type: {np.dtype(matrix[0])}")
+    return matrix #np.matrix(matrix,dtype= )
+    #bottom left triangle matrix of necessary comparisons we can transpose and map it later
+
+def get_rmsd_value(tup):
+    print(f"tup: {tup}")
+    chain_id, other_id = tup
+    if chain_id == other_id:
+        return 0
+    elif chain_id is None or other_id is None:
+        return 0
+    return cmd.rms_cur(f"/{chain_id}////CA",f"/{other_id}////CA",matchmaker=4)
+    #print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")
 
 
+def rmsd_matrix2(mat):
+    """Using multi processing to calculate the matrix"""
+    print("Starting rmsd matrix")
+    start = time.time()
+    cmd.alter("all", "segi=''")
+    cmd.alter("all", "chain=''") 
+    #print(mat)
+    n = len(mat)
+    print(f"n: {n}")
+    #matrix = np.zeros(shape=(n,n))
+    p = Pool()
+    vector_input = list()
+    for row in mat:
+        vector_input += row
+    print(f"vector input: {vector_input}")
+    result = p.map(get_rmsd_value,vector_input)
+    p.close()
+    p.join()
+    print(f"finished processing")
+    result = np.array(result)
+    np.reshape(result, (n,n))
+    result = np.transpose(result) + result
+    with open("matrix.var","wb") as infile1:
+        pickle.dump(result,infile1)
+        infile1.close() 
+    with open("matrix.txt","w") as infile2:
+        for row in result:
+            infile2.write(str(row))
+        infile2.close() 
+    print(f"time taken: {time.time()-start}")
 #print(f"right before if")
 
 main()
