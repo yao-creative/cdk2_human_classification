@@ -27,3 +27,6 @@ contains pdb class and other useful functions
 ### uncompress.py:
  uncompresses all gz files in pdb_files
 
+
+### Notes:
+pml_script_coord is specific to CDK2 since it specifically takes into account coordinates of the CA from 1 to 298

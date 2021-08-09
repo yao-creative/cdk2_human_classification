@@ -40,4 +40,4 @@ python3 pymol_list.py
 # pymol pml_script.py closed_inactive
 # pymol pml_script.py opened_inactive
 
-#pymol pymol_script_all.py
+pymol pymol_script_all.py

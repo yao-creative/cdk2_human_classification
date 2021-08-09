@@ -26,7 +26,7 @@ print(f"id_atom: {list}")
 cmd.alter("all", "segi=''")
 cmd.alter("all", "chain=''")
 print(f"altered")
-"""cmd.deselect()
+cmd.deselect()
 cmd.select("/A///0:4/CA")
 #/A///0:4/CA
 #/B///0:4/CA
@@ -36,7 +36,7 @@ cmd.select("/A///0:4/CA")
 xyz = cmd.get_coords('sele', 1) 
 print(f"xyz: {xyz}")
 
-cmd.deselect()"""
+cmd.deselect()
 """cmd.select("/A///1:6/CA")
 cmd.create("A_aln", "sele")
 cmd.deselect()

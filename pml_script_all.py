@@ -5,6 +5,8 @@ import numpy as np
 #from alignment_indices import collusion_list
 from multiprocessing import Pool
 import time
+import sys
+#sys.setrecursionlimit(290000)
 
 #print("running")
 def main():
@@ -18,7 +20,8 @@ def main():
         get_chains_list()    
     with open("chains_list.var","rb") as chains_list_var:
         chains_list= pickle.load(chains_list_var)
-    mat = comparission_mat(chains_list)
+    mat = comparision_mat(chains_list)
+    print(f"mat: {mat[0]}")
     #print(f"mat: {mat}")
     cmd.load("all_aligned.pse")
     print(f"loaded all align!")
@@ -176,33 +179,38 @@ def remove_het():
     cmd.remove("resn ATP")
     cmd.remove("resn MG")
 
-def comparission_mat(chains_list):
+def comparision_mat(chains_list):
     """Creates a matrix of tuples which have the two chain ids to compare"""
     matrix = list()
     for i,chain in enumerate(chains_list):
         row = list()
         for j in range(i+1):
             row.append((chains_list[i],chains_list[j]))
-        for k in range(i+1,len(chains_list)-1):
+        #print(f"i,: {i} row len: {len(row)}")
+        for _ in range(i+1,len(chains_list)):
+            #print(f"i+1: {i+1}")
             row.append((None,None))
+
+        #print(f"row length: {len(row)}")
         matrix.append(row)
     #print(f"data type: {np.dtype(matrix[0])}")
     return matrix #np.matrix(matrix,dtype= )
     #bottom left triangle matrix of necessary comparisons we can transpose and map it later
 
 def get_rmsd_value(tup):
-    print(f"tup: {tup}")
+    #print(f"tup: {tup}")
     chain_id, other_id = tup
     if chain_id == other_id:
         return 0
     elif chain_id is None or other_id is None:
         return 0
-    return cmd.rms_cur(f"/{chain_id}////CA",f"/{other_id}////CA",matchmaker=4)
+    return cmd.rms_cur(f"/{chain_id}////CA+CB",f"/{other_id}////CA+CB",matchmaker=4)
     #print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")
 
 
+###### Run time for this is actually 6.6 hours approx compared to nonmultiprocessing 18 hours ++
 def rmsd_matrix2(mat):
-    """Using multi processing to calculate the matrix"""
+    """Using multi processing to calculate the matrix CA+ CB"""
     print("Starting rmsd matrix")
     start = time.time()
     cmd.alter("all", "segi=''")
@@ -215,28 +223,54 @@ def rmsd_matrix2(mat):
     vector_input = list()
     for row in mat:
         vector_input += row
-    print(f"vector input: {vector_input}")
+    print(f"vector input: {len(vector_input)}")
     result = p.map(get_rmsd_value,vector_input)
     p.close()
     p.join()
+    with open("vector.txt","w") as vectortxt:
+        vectortxt.write(str(result))
+    with open("vector.var","wb") as vectorvar:
+        pickle.dump(result, vectorvar)
+    result = create_nxn_mat(result,n)
+    result = add_matrices(transpose(result), result)
     print(f"finished processing")
-    result = np.array(result)
-    np.reshape(result, (n,n))
-    result = np.transpose(result) + result
-    with open("matrix.var","wb") as infile1:
+    with open("matrix_AB.var","wb") as infile1:
         pickle.dump(result,infile1)
         infile1.close() 
-    with open("matrix.txt","w") as infile2:
+    with open("matrix_AB.txt","w") as infile2:
         for row in result:
             infile2.write(str(row))
         infile2.close() 
     print(f"time taken: {time.time()-start}")
 #print(f"right before if")
 
-main()
+
+#numpy created some crazy funky data types a list of lists of lists (n times), thus I'll use basic lists again.
+def create_nxn_mat(vector, n):
+    if len(vector) !=n:
+        print(f"invalid length: {len(vector)} vs {n*n}")
+    out = [[0 for _ in range(n)] for _ in range(n)] 
+    for i in range(n):
+        for j in range(n):
+            out[i][j] = vector[i*n+j]
+    return out
+        
+def transpose(x):
+    result = [[0 for _ in range(len(x))] for _ in range(len(x[0]))]
+    for i in range(len(x)):
+       #Iterate through columns
+        for j in range(len(x[0])):
+            result[j][i] = x[i][j]
+    return result
+def add_matrices(mat1, mat2):
+    out = [[0 for _ in range(len(mat1))] for _ in range(len(mat1[0]))] 
+    for i in range(len(mat1)):
+        for j in range(len(mat1[0])):
+            out[i][j] = mat1[i][j] + mat2[i][j]
+    return out
+#main()
 
 
-# main()
 # print("hi")
 
 
