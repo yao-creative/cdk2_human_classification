@@ -26,33 +26,33 @@ def main():
     print(f"program finished")
 
 def get_coords(chain,chain_length=298):
-    """Gets coordinate of CA atoms in a chain"""
+    """Gets coordinate of CA atoms in a chain and the indices which are None"""
     #list_of_conformation_coordinate_matrices
-    coord_mat = list()
-    existing_coords = list() #pymol indices are 1 --> 298, however 
+    #pymol indices are 1 --> 298, however 
     #this list will be 0 --> 297 for the sake of future programmability
-    for i in range(1,chain_length+1): #This part is specific 
-        try:
-            cmd.deselect()
-            cmd.select(f"/{chain}///{i}/CA")
-            coord_mat.append(cmd.get_coords('sele', 1))
-            existing_coords.append(i-1)
-        except:
-            continue
-    return (existing_coords,coord_mat)
+    cmd.deselect()
+    coords = list()
+    for i in range(1,chain_length+1):
+        coords.append(cmd.get_coords(f"/{chain}///{i}/CA", 1))
+    return coords
 
 def multiprocessing_get_coords(chains_list, chain_length=298):
     p = Pool()
-    result = p.map(get_coords,chains_list[0:2])
-
+    result = p.map(get_coords,chains_list)
     print("results retrieved")
     with open("coords_tup_res.var", "wb") as infile1:
         pickle.dump(result,infile1)
     with open("coords_tup_res.txt", "w") as infile2:
         infile2.write(str(result))
-    
-def pca_all_coordinates():
-    pass
+def pca_all_coordinates(all_chain_coords,chains_list):
+    """Takes a list of chain coordinate matrices, add all the points into one massive matrix"""
+    all_coords_list= list()
+    for matrix in all_chain_coords:
+        all_coords_list+= matrix
+    all_coords_array = np.matrix(all_coords_list)
+    ################ make sure to only sum every i of 298.
+    avg = np.sum(all_coords_array, axis=0)/ 20 #change this into number of not none inputs of the coordinates
+
 
 print(f"__name__: {__name__}")
 main()

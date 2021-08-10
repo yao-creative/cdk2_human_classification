@@ -210,7 +210,7 @@ def get_rmsd_value(tup):
 
 ###### Run time for this is actually 6.6 hours approx compared to nonmultiprocessing 18 hours ++
 def rmsd_matrix2(mat):
-    """Using multi processing to calculate the matrix CA+ CB"""
+    """Using multi processing to calculate the matrix CA + CB"""
     print("Starting rmsd matrix")
     start = time.time()
     cmd.alter("all", "segi=''")
