@@ -6,7 +6,10 @@ import numpy as np
 from multiprocessing import Pool
 import time
 import sys
-from pml_script_all import align_all,get_chains_list#,comparision_mat
+#from pml_script_all import align_all,get_chains_list#,comparision_mat
+from helper import bin_search
+from pml_script_all import align_all, get_chains_list
+
 
 def main():
     #Note if we want to redo alignment, makes sure that the file all_aligned.pse is removed
@@ -20,9 +23,11 @@ def main():
     with open("chains_list.var","rb") as chains_list_var:
         chains_list= pickle.load(chains_list_var)
 
-    cmd.load("all_aligned.pse")
+    #cmd.load("all_aligned.pse")
     print(f"all aligned loaded")
-    multiprocessing_get_coords(chains_list)
+    if "coords_res.var" not in lsdir:
+        multiprocessing_get_coords(chains_list)
+
     print(f"program finished")
 
 def get_coords(chain,chain_length=298):
@@ -39,20 +44,20 @@ def get_coords(chain,chain_length=298):
 def multiprocessing_get_coords(chains_list, chain_length=298):
     p = Pool()
     result = p.map(get_coords,chains_list)
+    p.join()
+    p.close()
     print("results retrieved")
-    with open("coords_tup_res.var", "wb") as infile1:
+    with open("coords_res.var", "wb") as infile1:
         pickle.dump(result,infile1)
-    with open("coords_tup_res.txt", "w") as infile2:
+    with open("coords_res.txt", "w") as infile2:
         infile2.write(str(result))
-def pca_all_coordinates(all_chain_coords,chains_list):
-    """Takes a list of chain coordinate matrices, add all the points into one massive matrix"""
-    all_coords_list= list()
-    for matrix in all_chain_coords:
-        all_coords_list+= matrix
-    all_coords_array = np.matrix(all_coords_list)
-    ################ make sure to only sum every i of 298.
-    avg = np.sum(all_coords_array, axis=0)/ 20 #change this into number of not none inputs of the coordinates
+
+
+##### Normally there'd be some variation of the gradient ascent algorithm and threshold to find high variation segments, 
+# for the purpose of time I'll impute values gotten from experimentation.
+
+
 
 
 print(f"__name__: {__name__}")
-main()
+#main()

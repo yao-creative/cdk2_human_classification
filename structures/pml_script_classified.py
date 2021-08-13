@@ -8,9 +8,9 @@ print(f"str(sys.argv): {str(sys.argv)}")
 
 def main():
     groups =dict()
-    closed_inactive= open("/Users/yao/Desktop/dkp/Work/internship1_bioinfo/structures/closed_active.var", "rb")
-    opened_active = open("/Users/yao/Desktop/dkp/Work/internship1_bioinfo/structures/opened_active.var", "rb")
-    opened_inactive = open("/Users/yao/Desktop/dkp/Work/internship1_bioinfo/structures/opened_inactive.var", "rb")
+    closed_inactive= open("closed_inactive.var", "rb")
+    opened_active = open("opened_active.var", "rb")
+    opened_inactive = open("opened_inactive.var", "rb")
 
     groups["opened_active"]=pickle.load(opened_active)
     groups["closed_inactive"]=pickle.load(closed_inactive)
@@ -20,7 +20,8 @@ def main():
         annotated_dict = pickle.load(annotated_var)
     #print(f"annotated_dict: {annotated_dict}")
     #print(f"annotated_dict[1e9h]: {annotated_dict['1E9H'].chains}")
-
+    
+    os.chdir("PDB_files")
     #cmd.load(f"{groups['opened_active'][0]}.pdb")
     group_list = [code.lower() for code in groups[str(sys.argv[2])]]
     for i,code in enumerate(group_list):
@@ -55,7 +56,6 @@ def main():
             print(f"aligned: {code} to {focus}")
     print(f"group_list: {group_list}")
 
-if __name__ == "__main__":
-    main()
+main()
 #os.system("pause")
 #input("press any key to continue")

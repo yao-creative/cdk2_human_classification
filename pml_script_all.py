@@ -145,6 +145,7 @@ def iterate_align(choice,choice_parent,annotated_dict, res_threshold=(False,None
 
 
 def rmsd_matrix(chains_list):
+    """Generates rmsd matrix however not multiprocessing which is slower"""
     n = len(chains_list)
     order = list()
     matrix = np.zeros(shape=(n,n))
@@ -168,6 +169,7 @@ def rmsd_matrix(chains_list):
 
 
 def remove_het():
+    """removes hetereogenous molecules"""
     with open("chains_list.var","rb") as chains_list_var:
         chains_list = pickle.load(chains_list_var)
     for chain_id in chains_list:
@@ -198,13 +200,14 @@ def comparision_mat(chains_list):
     #bottom left triangle matrix of necessary comparisons we can transpose and map it later
 
 def get_rmsd_value(tup):
+    """Given a tuple of two diff chains, calls the rsmd function on specific parts of them"""
     #print(f"tup: {tup}")
     chain_id, other_id = tup
     if chain_id == other_id:
         return 0
     elif chain_id is None or other_id is None:
         return 0
-    return cmd.rms_cur(f"/{chain_id}////CA+CB",f"/{other_id}////CA+CB",matchmaker=4)
+    return cmd.rms_cur(f"/{chain_id}///33:44+150:159/CA",f"/{other_id}///33:44+150:159/CA",matchmaker=4)
     #print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")
 
 
@@ -227,17 +230,17 @@ def rmsd_matrix2(mat):
     result = p.map(get_rmsd_value,vector_input)
     p.close()
     p.join()
-    with open("vector.txt","w") as vectortxt:
-        vectortxt.write(str(result))
-    with open("vector.var","wb") as vectorvar:
-        pickle.dump(result, vectorvar)
+    # with open("vector.txt","w") as vectortxt:
+    #     vectortxt.write(str(result))
+    # with open("vector.var","wb") as vectorvar:
+    #     pickle.dump(result, vectorvar)
     result = create_nxn_mat(result,n)
     result = add_matrices(transpose(result), result)
     print(f"finished processing")
-    with open("matrix_AB.var","wb") as infile1:
+    with open("matrix_seg.var","wb") as infile1:
         pickle.dump(result,infile1)
         infile1.close() 
-    with open("matrix_AB.txt","w") as infile2:
+    with open("matrix_seg.txt","w") as infile2:
         for row in result:
             infile2.write(str(row))
         infile2.close() 
@@ -268,7 +271,8 @@ def add_matrices(mat1, mat2):
         for j in range(len(mat1[0])):
             out[i][j] = mat1[i][j] + mat2[i][j]
     return out
-#main()
+    
+main()
 
 
 # print("hi")
