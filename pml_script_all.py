@@ -11,6 +11,7 @@ import sys
 #print("running")
 def main():
     #Note if we want to redo alignment, makes sure that the file all_aligned.pse is removed
+    print(f"__name__: {__name__}")
     print(f"started")
     lsdir = os.listdir(".")
     #print(f"lsdir: {lsdir}")
@@ -271,8 +272,9 @@ def add_matrices(mat1, mat2):
         for j in range(len(mat1[0])):
             out[i][j] = mat1[i][j] + mat2[i][j]
     return out
-    
-main()
+#print(f"str(sys.argv[1]): {str(sys.argv[1])}")
+if str(sys.argv[1]) == "pml_script_all.py":
+    main()
 
 
 # print("hi")

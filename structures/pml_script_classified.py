@@ -4,9 +4,10 @@ import pickle
 import sys
 sys.path.insert(1, "../")
 import helper
-print(f"str(sys.argv): {str(sys.argv)}")
+
 
 def main():
+    print(f"main started")
     groups =dict()
     closed_inactive= open("closed_inactive.var", "rb")
     opened_active = open("opened_active.var", "rb")
@@ -20,7 +21,7 @@ def main():
         annotated_dict = pickle.load(annotated_var)
     #print(f"annotated_dict: {annotated_dict}")
     #print(f"annotated_dict[1e9h]: {annotated_dict['1E9H'].chains}")
-    
+    print(f"files loaded")
     os.chdir("PDB_files")
     #cmd.load(f"{groups['opened_active'][0]}.pdb")
     group_list = [code.lower() for code in groups[str(sys.argv[2])]]
@@ -54,6 +55,7 @@ def main():
                 pass
 
             print(f"aligned: {code} to {focus}")
+    cmd.save(f"{str(sys.argv[2])}.pse", "all_aligned")
     print(f"group_list: {group_list}")
 
 main()

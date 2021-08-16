@@ -2,27 +2,29 @@
 #---------------------------------------------------
 #
 import pickle
-import numpy as np
-from matplotlib import pyplot as plt
-from copy import deepcopy
-from sympy.utilities.iterables import multiset_permutations
-from scipy.cluster.hierarchy import dendrogram, linkage, leaves_list, to_tree, centroid, cut_tree
-from pandas import DataFrame as df
-from sklearn import decomposition
-from sklearn.cluster import KMeans
-import pandas as pd
-from multiprocessing import Pool
-from sklearn.decomposition import PCA,KernelPCA
-from sklearn.experimental import enable_iterative_imputer
-from sklearn.impute import IterativeImputer
-from sklearn.manifold import TSNE
-import threading
-from sklearn.cluster import AgglomerativeClustering
+import sys
+if str(sys.argv[1][:3]) != "pml":
+    import numpy as np
+    from matplotlib import pyplot as plt
+    from copy import deepcopy
+    from sympy.utilities.iterables import multiset_permutations
+    from scipy.cluster.hierarchy import dendrogram, linkage, leaves_list, to_tree, centroid, cut_tree
+    from pandas import DataFrame as df
+    from sklearn import decomposition
+    from sklearn.cluster import KMeans
+    import pandas as pd
+    from multiprocessing import Pool
+    from sklearn.decomposition import PCA,KernelPCA
+    from sklearn.experimental import enable_iterative_imputer
+    from sklearn.impute import IterativeImputer
+    from sklearn.manifold import TSNE
+    import threading
+    from sklearn.cluster import AgglomerativeClustering
 
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.set_option('display.max_colwidth', None)
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', None)
+    pd.set_option('display.max_colwidth', None)
 
 
 #CLASSES
@@ -123,6 +125,7 @@ def real_cluster_map(X,annotated_dict_list, chains_list):
     axes =X.T
     axis1 =axes[0]
     axis2 =axes[1]
+    print(f"shape axis1: {np.shape(axis1)} axis2: {np.shape(axis2)}")
     for i,group in enumerate(annotated_dict_list):
         group_indices = np.array(annotated_dict_list[group])
         print(f"group: {group}")
@@ -300,7 +303,7 @@ def misclassification(chains_list,cluster_list, annotated_dict_list, most_matche
     return out
 
     
-def statistics(cluster_list, annotated_dict_list):
+def statistics(cluster_list, annotated_dict_list,to_print=True):
     """Takes a list of groups unassigned, a dictionary of lists annotated
     where the keys are the groups and the lists are the supposed conformations
     and prints statistics matrix of cross classified conformations:
@@ -308,9 +311,10 @@ def statistics(cluster_list, annotated_dict_list):
     if len(cluster_list) != len(annotated_dict_list):
         print("lengths of clusters and groups must be equal")
         return
-    print("--"*30+ "\nSTATISTICS\n" +"--"*30)
-    for i in range(len(cluster_list)):
-        print(f"cluster {i}, length: {len(cluster_list[i])}")
+    if to_print:
+        print("--"*30+ "\nSTATISTICS\n" +"--"*30)
+        for i in range(len(cluster_list)):
+            print(f"cluster {i}, length: {len(cluster_list[i])}")
     a = annotated_dict_list.keys()
     all_permutations=list(multiset_permutations(a))
     fit_list =[best_fit_elimination(cluster,annotated_dict_list) for cluster in cluster_list]
@@ -366,28 +370,28 @@ def statistics(cluster_list, annotated_dict_list):
     stats_df = df(stats_mat,most_matched[0] + ["Averages"], ["Precision", "Recall", "F1 score"])
     micro_averages, pooled, pooled_precision,pooled_recall= micro_avg(matrix,most_matched[0])
 
-    ############## MACRO AVERAGES
-
-    print("--"*30+ "\nMACRO AVERAGES\n" +"--"*30)
-    #print(f"precision: {precision_dict}\nmacro average: {p_avg}\nrecall: {recall_dict}\nmacro average: {r_avg}\nF1 score: {F1_score_dict}\nmacro average:{f1_avg}")
-    print(stats_df.to_string(max_cols=3))
     out = df(matrix.astype(int), ["Predicted "+label for label in most_matched[0]] ,["Real "+label for label in most_matched[0]])
-    print(f"out:\n {out.to_string(max_cols=len(most_matched[0]))}")
+    if to_print:
+        ############## MACRO AVERAGES
+        print("--"*30+ "\nMACRO AVERAGES\n" +"--"*30)
+        #print(f"precision: {precision_dict}\nmacro average: {p_avg}\nrecall: {recall_dict}\nmacro average: {r_avg}\nF1 score: {F1_score_dict}\nmacro average:{f1_avg}")
+        print(stats_df.to_string(max_cols=3))
+        print(f"out:\n {out.to_string(max_cols=len(most_matched[0]))}")
 
 
-    ############## MICRO AVERAGES
+        ############## MICRO AVERAGES
 
-    print("--"*30+ "\nMICRO AVERAGES\n"+"--"*30)
-    #print(f"len mic_avg: {len(micro_averages)}")
-    for m_avg in micro_averages:
-        print(f"{m_avg}")
+        print("--"*30+ "\nMICRO AVERAGES\n"+"--"*30)
+        #print(f"len mic_avg: {len(micro_averages)}")
+        for m_avg in micro_averages:
+            print(f"{m_avg}")
 
-    print(f"pooled:\n {pooled}")
+        print(f"pooled:\n {pooled}")
+        
+        print(f"precision: {pooled_precision} recall: {pooled_recall}")
+        print(f"F1_score: {2*pooled_precision*pooled_recall/(pooled_precision+pooled_recall)}")
     
-    print(f"precision: {pooled_precision} recall: {pooled_recall}")
-    print(f"F1_score: {2*pooled_precision*pooled_recall/(pooled_precision+pooled_recall)}")
-    
-    return most_matched
+    return most_matched,f1_avg,p_avg,r_avg
 
 
 def heat_map(leaves_list,chains_list,matrix):
@@ -496,26 +500,30 @@ def plot_dendrogram(title, out):
     dn = dendrogram(out)
     plt.show()
 
-def misclassified_vs_missing(misclassified, complete):
-    """Checks how many misclassified conformations coincide with missing residues beyond a certain threshold"""
-    if complete:
-        with open("missing_res_chains.var", "rb") as missing_res_chains_var:
-            missing_res_chains = pickle.load(missing_res_chains_var)
-    else:
-        with open("removed_chains.var", "rb") as removed_chains_var:
-            missing_res_chains = pickle.load(removed_chains_var)
-    print(f"Threshold: {missing_res_chains[0]}")
-    missing_res_chains = missing_res_chains[1:]
-    count = 0 
-    coincide = list()
-    for tup in misclassified:
-        if tup[1] in missing_res_chains:
-            coincide.append(tup[1])
-            count +=1
+def misclassified_vs_missing(misclassified):
+    with open("num_missing_list_seg.var", "rb") as num_missing_list_seg_var:
+        num_missing_list = pickle.load(num_missing_list_seg_var)
+    misclassified_indices = [item[0] for item in misclassified]
+    max_num_missing_list =max(num_missing_list)+1
+    totals_missing = [num_missing_list.count(i) for i in range(max_num_missing_list)] #totals[i] contains # conformations with i missing residues 
+    misclassified_missing = [0 for i in range(max_num_missing_list)]
+    for i in misclassified_indices:
+        misclassified_missing[num_missing_list[i]] +=1
+    y = list()
+    x = list()
+    for i in range(max_num_missing_list):
+        if totals_missing[i] >0: 
+            y.append(misclassified_missing[i]/totals_missing[i])
+            x.append(i)
 
-    print(f"Count of how many misclassified conformations coincide with missing residues beyond the threshold: {count} coincidence list: {coincide}")
-
-    return coincide, count
+    plt.figure(figsize=(20,20))
+    plt.plot(x,y)
+    plt.xlabel("Number of missing residues")
+    plt.ylabel("Percentage of conformations misclassified")
+    plt.title("Number of missing residues vs percentage misclassified")
+    print(f"(#missing residues, percentage) {[(x[i],y[i]) for i in range(len(x))]}")
+    print(f"miclassified_missing (list where value at i is amount of misclassified and i is amount of missing residues:\n {misclassified_missing}")
+    print(f"totals_missing (list where value at i is number of conformations and i is amount of missing residues:\n {totals_missing}")
 
 
 
@@ -538,8 +546,8 @@ def info(matrix,title,chains_list,annotated_dict_list,complete, kernel="linear",
         classes = compute_kmeans(reduced_mat,no_clusters= no_clusters)
         cluster_labels, cluster_list= convert_classes_to_clusters(classes)
         #print(f"cluster_list: {cluster_list}, cluster_labels: {cluster_labels}")
-        most_matched = statistics(cluster_list,annotated_dict_list)
-        misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,531)
+        most_matched = statistics(cluster_list,annotated_dict_list)[0]
+        misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples = len(chains_list))
         plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,classes = classes, cluster_labels=cluster_labels, title= f"Kmeans of {title}")
 
     else:
@@ -553,8 +561,8 @@ def info(matrix,title,chains_list,annotated_dict_list,complete, kernel="linear",
             ward_cluster = AgglomerativeClustering(n_clusters=no_clusters).fit(matrix)
             classes =ward_cluster.labels_
             cluster_labels, cluster_list = convert_classes_to_clusters(classes)
-            most_matched = statistics(cluster_list,annotated_dict_list)
-            misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,531)
+            most_matched = statistics(cluster_list,annotated_dict_list)[0]
+            misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples = len(chains_list))
             plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,classes= classes, cluster_labels=cluster_labels, title = hierarchy_method)
         else:
             l = leaves_list(out)
@@ -573,11 +581,10 @@ def info(matrix,title,chains_list,annotated_dict_list,complete, kernel="linear",
             print(f"tree1: {choice1}, tree2: {choice2}")
             cluster_list = [np.sort(l[:idx1]),np.sort(l[idx1:idx2]),np.sort(l[idx2:])]
             n = tree.count
-            most_matched = statistics(cluster_list,annotated_dict_list)
+            most_matched,_ = statistics(cluster_list,annotated_dict_list)[0]
             misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples =531)
             plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,cluster_list=cluster_list, title= hierarchy_method)
         misclassified_vs_missing(misclassified,complete)
-
 
 
 ########## COORDINATE BASED MATRIX functions to help pml_script_coord.py
@@ -595,25 +602,38 @@ def reduce_seg(coords,seg_idx_list,chains_list,threshold=7):
         for seg in seg_idx_list:
             temp.append(matrix[seg[0]:seg[1]+1])
         seg_list.append(temp)
-    removed_indices = list()
+    removed_indices = list() #list of removed indices
+    num_missing_list_seg = list() #list in the same order, each list[i] is the number of missing residues for the ith conformation
     for i,conformation in enumerate(seg_list):
+        num_missing = 0
+        add_conformation = True
+        #print(f"i: {i}")
         for seg_mat in conformation:
-            #print(f"seg_mat: {seg_mat}")
-            if sum(1 for k in seg_mat if k is None) >= threshold:
-                removed_indices.append(i)
-                break
+            temp= sum(1 for k in seg_mat if k is None)
+            #print(f"i: {i} temp: {temp}")
+            num_missing += temp
+            if temp >= threshold:
+                if len(removed_indices) == 0 or removed_indices[-1] != i: #if the index is not already added
+                    removed_indices.append(i)
+                    add_conformation = False
+        if add_conformation: #if not removed we keep it in the num_list_seg for statistics purposes
+            num_missing_list_seg.append(num_missing)
     print(f"Threshold: {threshold} amount removed: {len(removed_indices)}")
-    print(f"segment removed_indices: {removed_indices}")
+    #print(f"segment removed_indices: {removed_indices}")
     new_seg_list = list()
     reduced_chains_list= list()
     removed_chains = list()
-    for i,item in enumerate(seg_list):
-        #print(f"i: {i} ")
-        if bin_search(removed_indices,0, len(removed_indices)-1,i):
-            removed_chains.append(chains_list[i])
-        else:
-            new_seg_list.append(item)
-            reduced_chains_list.append(chains_list[i])
+    if len(removed_indices)>0: #if there's any to remove
+        for i,item in enumerate(seg_list):
+            #print(f"i: {i} ")
+            if bin_search(removed_indices,0, len(removed_indices)-1,i):
+                removed_chains.append(chains_list[i])
+            else:
+                new_seg_list.append(item)
+                reduced_chains_list.append(chains_list[i])
+    else:
+        reduced_chains_list = chains_list
+        new_seg_list = seg_list
     with open("removed_chains.txt", "w") as removed_chains_txt:
         removed_chains_txt.write(f"Threshold: {threshold} amount removed: {len(removed_chains)}\n")
         removed_chains_txt.write(str(removed_chains))
@@ -623,38 +643,50 @@ def reduce_seg(coords,seg_idx_list,chains_list,threshold=7):
         removed_chains_var.close()
     with open("reduced_chains_list.var", "wb") as reduced_chains_list_var:
         pickle.dump(reduced_chains_list,reduced_chains_list_var)
+    with open("num_missing_list_seg.var", "wb") as num_missing_list_seg_var:
+        pickle.dump(num_missing_list_seg, num_missing_list_seg_var)
     #print(f"removed indices: {removed_indices} new_seg_list: {new_seg_list} reduced_chains_list: {reduced_chains_list}")
     return new_seg_list,reduced_chains_list
 
-def reduce(coords,chains_list, threshold=10):
-    """Taking original coordinates, if a matrix surpasses the threshold amount of missing coordainates, it is eliminated"""
-    removed_indices = list()
-    missing_res_chains = list()
-    full_reduced_chains_list = list()
-    full_reduced_coords = list()
-    for i,conformation in enumerate(coords):
-        if sum(1 for k in conformation if k is None) >= threshold:
-            removed_indices.append(i)
+# def reduce(coords,chains_list, threshold=10, write=False):
+#     """Taking original coordinates, if a matrix surpasses the threshold amount of missing coordainates, it is eliminated"""
+#     removed_indices = list()
+#     missing_res_chains = list()
+#     full_reduced_chains_list = list()
+#     full_reduced_coords = list()
+#     num_missing_list = list()
+#     for i,conformation in enumerate(coords):
+#         num_missing = sum(1 for k in conformation if k is None)
+#         if num_missing >= threshold:
+#             removed_indices.append(i)
+#         else:
+#             num_missing_list.append(num_missing)
+#     if len(removed_indices)>0: #if there's any to remove
+#         for i,conformation in enumerate(coords):
+#             #print(f"i: {i} ")
+#             if bin_search(removed_indices,0, len(removed_indices)-1,i):
+#                 missing_res_chains.append(chains_list[i])
+#             else:
+#                 full_reduced_chains_list.append(chains_list[i])
+#                 full_reduced_coords.append(conformation)
+#     else: #if there isn't we just reassign the same values
+#         full_reduced_chains_list = chains_list
+#         full_reduced_coords = coords
+#     print(f"Threshold: {threshold} amount removed: {len(removed_indices)}")
+#     #print(f"complete removed_indices: {removed_indices}")
+#     with open("missing_res_chains.txt", "w") as missing_res_chains_txt:
+#         missing_res_chains_txt.write(f"Threshold: {threshold} amount: {len(missing_res_chains)}")
+#         missing_res_chains_txt.write(str(missing_res_chains))
+#     with open("missing_res_chains.var", "wb") as missing_res_chains_var:
+#         pickle.dump([threshold] + missing_res_chains, missing_res_chains_var)
+#     with open("full_reduced_coords.var", "wb") as full_reduced_coords_var:
+#         pickle.dump(full_reduced_coords, full_reduced_coords_var)
+#     with open("full_reduced_chains_list.var", "wb") as full_reduced_chains_list_var:
+#         pickle.dump(full_reduced_chains_list,full_reduced_chains_list_var)
+#     with open("num_missing_list.var", "wb") as num_missing_list_var:
+#         pickle.dump(num_missing_list, num_missing_list_var)
+#     return full_reduced_coords, full_reduced_chains_list
 
-    for i,conformation in enumerate(coords):
-        #print(f"i: {i} ")
-        if bin_search(removed_indices,0, len(removed_indices)-1,i):
-            missing_res_chains.append(chains_list[i])
-        else:
-            full_reduced_chains_list.append(chains_list[i])
-            full_reduced_coords.append(conformation)
-    print(f"Threshold: {threshold} amount removed: {len(removed_indices)}")
-    print(f"complete removed_indices: {removed_indices}")
-    with open("missing_res_chains.txt", "w") as missing_res_chains_txt:
-        missing_res_chains_txt.write(f"Threshold: {threshold} amount: {len(missing_res_chains)}")
-        missing_res_chains_txt.write(str(missing_res_chains))
-    with open("missing_res_chains.var", "wb") as missing_res_chains_var:
-        pickle.dump([threshold] + missing_res_chains, missing_res_chains_var)
-    with open("full_reduced_coords.var", "wb") as full_reduced_coords_var:
-        pickle.dump(full_reduced_coords, full_reduced_coords_var)
-    with open("full_reduced_chains_list.var", "wb") as full_reduced_chains_list_var:
-        pickle.dump(full_reduced_chains_list,full_reduced_chains_list_var)
-    return full_reduced_coords, full_reduced_chains_list
 def impute(matrix):
     imp = IterativeImputer()
     return imp.fit_transform(matrix)
@@ -674,32 +706,35 @@ def coordinate_impute(seg_list):
     for k, segment in enumerate(conformation_by_seg):
         temp = [list() for _ in range(len(segment[0]))]
         for conformation in segment:
+            none_count = 0
             for i, residue in enumerate(conformation):
                 if residue is None:
                     residue = np.array([np.nan, np.nan, np.nan])
                 else:
                     residue = residue[0]
-                
-                temp[i].append(residue)
+                if none_count < len(conformation): #the whole array is not none
+                    temp[i].append(residue)
         for i in range(len(temp)):
             #print(f"temp[i]: {temp[i]}")
             #print(f"shape temp[i]: {np.shape(temp[i])}")
             temp[i] = np.matrix(temp[i])
+        print(f"temp[-1] {temp[-1]}")
         p = Pool()
         result =  p.map(impute,temp)
         p.close()
         p.join()
+        #print(f"result[-1]: {result[-1]}")
         conformation_by_seg_by_index.append(result)
     print(f"imputation done")
-    with open("imputed_seg_coord.var","wb") as infile:
-        pickle.dump(conformation_by_seg_by_index,infile)
-    with open("imputed_seg_coord.txt","w") as infile2:
-        infile2.write(str(conformation_by_seg_by_index))
+    # with open("imputed_seg_coord.var","wb") as infile:
+    #     pickle.dump(conformation_by_seg_by_index,infile)
+    # with open("imputed_seg_coord.txt","w") as infile2:
+    #     infile2.write(str(conformation_by_seg_by_index))
     return conformation_by_seg_by_index
     #print(f"conformation by seq by index: {conformation_by_seg_by_index}")
 
 
-def seg_val(conformation_by_seg_by_index):
+def seg_val(conformation_by_seg_by_index,to_print=False):
     """takes seg_list and reduces it into one feature,
     coords list of matrices of coordinates
     Parameters: list(list(np.matrix()))
@@ -720,6 +755,8 @@ def seg_val(conformation_by_seg_by_index):
         average = [([None]*len(seg[0][0])) for _ in range(len(seg[0]))]
         for j,conformation_seg in enumerate(temp):
             #print(f"np.sum(conformation_seg, axis=0): {np.sum(conformation_seg, axis=0)}")
+            print(f"j: {j}")
+            #if j == len(temp)-1: print(f"conformation_seg: {conformation_seg} shape: {np.shape(conformation_seg)}")
             average[j] = np.sum(conformation_seg, axis=0)/(len(conformation_seg))
         if show:
             show = False
@@ -728,15 +765,20 @@ def seg_val(conformation_by_seg_by_index):
         #print(f"np.shape(average): {np.shape(average)}")
         reduced_average = [val[0] for val in TSNE(n_components=1).fit_transform(average)]
         seg_list.append(reduced_average)
-    print(f"seg_list: {np.shape(seg_list)}")
+    seg_list= np.matrix(seg_list).T
+    if to_print:
+        print(f"seg_list: {np.shape(seg_list)}")
+    with open("matrix_seg_coords.txt", "w") as matrix_seg_coords_txt:
+        matrix_seg_coords_txt.write(str(seg_list))
+        matrix_seg_coords_txt.close()
+    with open("matrix_seg_coords.var", "wb") as matrix_seg_coords_var:
+        pickle.dump(seg_list,matrix_seg_coords_var)
+        matrix_seg_coords_var.close()
     return seg_list
-            
+
+
             
 
-    pca = PCA(n_components=1)
-    all_coords_reduced = pca.fit_transform(all_coords)
-    print(f"all_coords_reduced: {all_coords_reduced}")
-    conf_by_seg_by_index_one_dim = list()
 def threshold_remove(threshold, segments=None):
     """Given threshold, and segments list of tuples (start and end of each segment), list(segment(start,end)),
     """
@@ -746,26 +788,125 @@ def threshold_remove(threshold, segments=None):
     with open("chains_list.var", "rb") as chains_list_var:
         chains_list = pickle.load(chains_list_var)
         chains_list_var.close()
-    if segments is None:
-        return reduce(coords,chains_list,threshold=threshold)
-    else:
-        return reduce_seg(coords,segments,chains_list,threshold=threshold)
+    if segments is None: #complete we add one full segment into the reduce segment analysis.
+        segments = [(0,len(coords[0])-1)]
+    return reduce_seg(coords,segments,chains_list,threshold=threshold)
 
-def run():
+def calc_coord_based_matrix(threshold, segments = [(32,43),(149,158)]):
+    """Calculates coordinate based matrix, where each feature is the center of a pre-identified high variance region condensed by T-SNE"""
+    new_seg_list, _ = threshold_remove(threshold,segments)
+    #print(f"new_seg_list: {len(new_seg_list)}")
+    conformation_by_seg_by_index = coordinate_impute(new_seg_list)
+    return seg_val(conformation_by_seg_by_index)
     
-    #new_seg_list, reduced_chains_list = threshold_remove(7,[(32,43),(149,158)])
-    #conformation_by_seg_by_index = coordinate_impute(new_seg_list)
-    with open("imputed_seg_coord.var","rb") as imputed_seg_coord_var:
-        conformation_by_seg_by_index= pickle.load(imputed_seg_coord_var)
-        imputed_seg_coord_var.close()
-    matrix_seg_coords =seg_val(conformation_by_seg_by_index)
-    with open("matrix_seg_coords.var", "wb") as matrix_seg_coords_var:
-        pickle.dump(matrix_seg_coords,matrix_seg_coords_var)
-        matrix_seg_coords_var.close()
-    with open("matrix_seg_coords.txt", "w") as matrix_seg_coords_txt:
-        matrix_seg_coords_txt.write(str(matrix_seg_coords))
-        matrix_seg_coords_var.close()
 
+
+def calc_stats_process(triple):
+    """Calculate stats with different mice imputations"""
+    
+    new_seg_list, annotated_dict_list, no_clusters = triple
+    conformation_by_seg_by_index = coordinate_impute(new_seg_list)
+    print(f"comnformation_by_seg_by_index[0][297]: {(conformation_by_seg_by_index[0][297])}")
+    matrix =seg_val(conformation_by_seg_by_index)
+    #thread = threading.Thread(target = pause_and_print, args= (f"matrix: {type(matrix)}"))
+    #thread.start()
+    #thread.join()
+    ward_cluster = AgglomerativeClustering(n_clusters=no_clusters).fit(matrix)
+    classes =ward_cluster.labels_
+    _, cluster_list = convert_classes_to_clusters(classes)
+    _,f1_avg,p_avg,r_avg = statistics(cluster_list,annotated_dict_list,to_print=False)
+    return [f1_avg,p_avg,r_avg]
+
+def multirun(annotated_dict_list, segments = [(32,43),(149,158)], threshold=7,no_clusters=3, iter=10):
+    """"""
+    if iter <0:
+        print("invalid iter")
+        return
+    if segments is None:
+        with open("coords_res.var","rb") as coords_res_var:
+            coords = pickle.load(coords_res_var)
+        # for conformation in coords_res:
+        #    print(f"conformation[-1]: {conformation[-1]}")
+        print(f"len(coords[0])-1: {len(coords[0])-1}")
+        segments = [(0,len(coords[0])-1)]
+    new_seg_list, _ = threshold_remove(threshold,segments)
+    #print(f"new seg list shape: {np.shape(new_seg_list)}")
+    #print(f"")
+    # for seg in new_seg_list:
+    #     print(f"seg[0][-1]: {seg[0][-1]}")
+    vector = [(new_seg_list,annotated_dict_list,no_clusters) for _ in range(iter)]
+    result = list(map(calc_stats_process,vector))
+    final_averages = (np.sum(np.matrix(result),axis=0)/iter)
+    print(f"Iterations: {iter}, f1_avg: {final_averages[0,0]}, p_avg: {final_averages[0,1]}, r_avg: {final_averages[0,2]}")
+    return final_averages
+
+
+def multirun_full():
+    with open("reduced_chains_list.var","rb") as reduced_chains_list_var:
+        reduced_chains_list = pickle.load(reduced_chains_list_var)
+        reduced_chains_list_var.close()
+    with open("chains_list.var","rb") as chains_list_var:
+        chains_list = pickle.load(chains_list_var)
+        chains_list_var.close()
+    #print(f"chains_list: {chains_list}")
+    with open("structures/opened_active.var", "rb") as open_active_var:
+        open_active_list = pickle.load(open_active_var)
+        open_active_var.close()
+    with open("structures/closed_inactive.var", "rb") as closed_inactive_var:
+        closed_inactive_list = pickle.load(closed_inactive_var)
+        closed_inactive_var.close()
+    with open("structures/opened_inactive.var", "rb") as open_inactive_var:
+        open_inactive_list = pickle.load(open_inactive_var)
+        open_inactive_var.close()
+
+    print(f"open_active: {len(open_active_list)}")
+    print(f"closed_inactive: {len(closed_inactive_list)}")
+    print(f"open_inactive: {len(open_inactive_list)}")
+    annotated_dict_list_codes= {"open_active": open_active_list, "closed_inactive": closed_inactive_list, "open_inactive": open_inactive_list} #dictionary of codes list
+    annotated_dict_list ={"open_active": list(), "closed_inactive": list(), "open_inactive": list()} #dictionary of list of indices
+    for i,conformation in enumerate(chains_list):
+        for j,l in enumerate(annotated_dict_list_codes):
+            if conformation in annotated_dict_list_codes[l]:
+                #print(f"l: {l}")
+                annotated_dict_list[l].append(i)
+    print(f"reduced lengths")
+    for key in annotated_dict_list:
+        print(f"{key}: {len(annotated_dict_list[key])}")
+    multirun(chains_list,threshold=297,segments=None,iter=2)
+
+def identify_highvariance_region(conformation_by_index):
+    """Identifies highvariance regions in a whole conformation
+    conformation_by_seg_by_index, will require that"""
+    translational_vector = list() #vector of length of conformation, describing the average translational vector in each 
+    epsilon = np.arange(0.2,4,0.2)
+    for i in range(len(conformation_by_index))[::3]:
+        pass
+
+
+        
 
 if __name__ == "__main__":
-    run()
+    with open("imputed_seg_coord.var", "rb") as imputed_seg_coord_var:
+        imputed_seg_coord = pickle.load(imputed_seg_coord_var)
+        imputed_seg_coord_var.close()
+    print(f"type imputed_seg_coord: {type(imputed_seg_coord)}")
+    print(f"len imputed_seg_coord[0]: {len(imputed_seg_coord[0])}")
+    identify_highvariance_region(imputed_seg_coord[0])
+    
+    #identify_highvariance_region(coords)
+
+    
+
+# with open("coords_res.var","rb") as coords_res_var:
+#     coords_res = pickle.load(coords_res_var)
+#     coords_res_var.close()
+# new_coords_res = list()
+# for conformation in coords_res:
+#     print(f"len(conformation[:-1]): {len(conformation[:-1])}")
+#     print(f"(conformation[:-1][-1]): {(conformation[:-1][-1])}")
+#     new_coords_res.append(conformation[:-1])
+# print(f"new")
+# with open("coords_res.var","wb") as coords_res_var:
+#     pickle.dump(new_coords_res,coords_res_var)
+# with open("coords_res.txt", "w") as infile2:
+#     infile2.write(str(new_coords_res))

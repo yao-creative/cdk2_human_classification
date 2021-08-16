@@ -1,13 +1,11 @@
 from pymol import cmd
 import os
 import pickle
-import numpy as np
 #from alignment_indices import collusion_list
 from multiprocessing import Pool
 import time
 import sys
 #from pml_script_all import align_all,get_chains_list#,comparision_mat
-from helper import bin_search
 from pml_script_all import align_all, get_chains_list
 
 
@@ -23,14 +21,15 @@ def main():
     with open("chains_list.var","rb") as chains_list_var:
         chains_list= pickle.load(chains_list_var)
 
-    #cmd.load("all_aligned.pse")
+    cmd.load("all_aligned.pse")
     print(f"all aligned loaded")
     if "coords_res.var" not in lsdir:
+        print(f"getting coords")
         multiprocessing_get_coords(chains_list)
 
     print(f"program finished")
 
-def get_coords(chain,chain_length=298):
+def get_coords(chain,chain_length=297):
     """Gets coordinate of CA atoms in a chain and the indices which are None"""
     #list_of_conformation_coordinate_matrices
     #pymol indices are 1 --> 298, however 
@@ -41,23 +40,26 @@ def get_coords(chain,chain_length=298):
         coords.append(cmd.get_coords(f"/{chain}///{i}/CA", 1))
     return coords
 
-def multiprocessing_get_coords(chains_list, chain_length=298):
+def multiprocessing_get_coords(chains_list, chain_length=297):
+    start = time.time()
     p = Pool()
     result = p.map(get_coords,chains_list)
-    p.join()
     p.close()
+    p.join()
     print("results retrieved")
     with open("coords_res.var", "wb") as infile1:
         pickle.dump(result,infile1)
     with open("coords_res.txt", "w") as infile2:
         infile2.write(str(result))
+    print(f"time taken: {time.time() - start}")
+    
 
 
 ##### Normally there'd be some variation of the gradient ascent algorithm and threshold to find high variation segments, 
 # for the purpose of time I'll impute values gotten from experimentation.
 
+print(f"str(sys.argv[1]): {str(sys.argv[1]) }")
+if str(sys.argv[1]) == "pml_script_coord.py":
+    main()
 
-
-
-print(f"__name__: {__name__}")
-#main()
+#print(f"__name__: {__name__}")
