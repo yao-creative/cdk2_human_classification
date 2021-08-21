@@ -4,6 +4,7 @@ import sys
 sys.path.insert(1, "../")
 import helper
 def main():
+    print("started pymol_list.py")
     pymol_list = open("pymol_list.txt", "w")
     opened_active = open("opened_active.txt", "w")
     closed_inactive = open("closed_inactive.txt", "w")
@@ -20,6 +21,7 @@ def main():
     closed_inactive_list = list()
     opened_inactive_list = list()
     for chains_code in chains_dict:
+
         conformation_chain =chains_dict[chains_code]
         pymol_list.write(f"{conformation_chain.code}" + " ")
         if "open" in conformation_chain.group:

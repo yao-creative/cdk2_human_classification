@@ -68,7 +68,7 @@ def main():
                 pdb_dict[item[:-4].upper()] = pdb
                 #print(f"pdb: {pdb}")
 
-    get_structure(pdb_dict)
+    #get_structure(pdb_dict)
     for pdb in pdb_dict:
         annotated_txt.write(repr(pdb_dict[pdb]) + "\n")
     os.chdir("..")
@@ -76,37 +76,38 @@ def main():
         pickle.dump(pdb_dict,f)  #some how after getting the structures the dump has become heavy duty
     f.close() 
     annotated_txt.close()
+    print(f"annotated")
 
 #Non functionining program, ignore for the momet
-def get_structure(annotated_dict):
-    """Get's structure from each of the pdbs using bio python pdb parser"""
-    parser = PDB.PDBParser(PERMISSIVE= True, QUIET= True)
+# def get_structure(annotated_dict):
+#     """Get's structure from each of the pdbs using bio python pdb parser"""
+#     parser = PDB.PDBParser(PERMISSIVE= True, QUIET= True)
 
-    for item in annotated_dict:
-        item =item.lower()
-        structure = parser.get_structure(item, f"{item}.pdb")
+#     for item in annotated_dict:
+#         item =item.lower()
+#         structure = parser.get_structure(item, f"{item}.pdb")
         
-        for model in structure:
-            residues = dict()
-            for chain in model:
-                if chain.id in annotated_dict[item.upper()].chains:
-                    chain_res= list()#keys: chains, values: residue in list
-                    for residue in chain:
-                        if residue.resname != "HOH":
-                            chain_res.append(residue.resname)
-                    residues[chain.id] = chain_res
-                #print('>some_header\n',''.join(seq))
-        """models =list(structure.get_models())
-        print(f"structure.get_models(): {models}")
-        print(f"models[0]: {models[0]}")"""
-        atoms = [list(residue) for residue in residues]
-        conformation =annotated_dict[item.upper()]
-        conformation.structure= structure
-        conformation.residues= residues
-        conformation.atoms = atoms
-        annotated_dict[item.upper()]= conformation
-        print(f"{item} success!\nResidue: {residues}")
-        print(f"Get structures done")
+#         for model in structure:
+#             residues = dict()
+#             for chain in model:
+#                 if chain.id in annotated_dict[item.upper()].chains:
+#                     chain_res= list()#keys: chains, values: residue in list
+#                     for residue in chain:
+#                         if residue.resname != "HOH":
+#                             chain_res.append(residue.resname)
+#                     residues[chain.id] = chain_res
+#                 #print('>some_header\n',''.join(seq))
+#         """models =list(structure.get_models())
+#         print(f"structure.get_models(): {models}")
+#         print(f"models[0]: {models[0]}")"""
+#         atoms = [list(residue) for residue in residues]
+#         conformation =annotated_dict[item.upper()]
+#         conformation.structure= structure
+#         conformation.residues= residues
+#         conformation.atoms = atoms
+#         annotated_dict[item.upper()]= conformation
+#         print(f"{item} success!\nResidue: {residues}")
+#         print(f"Get structures done")
 
 if __name__ == "__main__":
     main()
