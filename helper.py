@@ -126,17 +126,25 @@ def real_cluster_map(X,annotated_dict_list, chains_list):
 
     plt.figure(figsize=(20,20))
     colors  = ['tab:blue', 'tab:orange', 'tab:green']
-    axes =X.T
+    axes = X.T
     axis1 =axes[0]
     axis2 =axes[1]
-    print(f"shape axis1: {np.shape(axis1)} axis2: {np.shape(axis2)}")
+    one_D = False
+    print(f"type X: {type(X)},  type - ax1[0]: {type(axis1[0])} axis1.tolist()[0]: {np.shape(axis1.tolist()[0])}")
+    try:
+        if type(axis1[0]) is not np.float32:
+            axis1 = np.array(axis1.tolist()[0])
+            axis2 = np.array(axis2.tolist()[0])
+            one_D = True
+            
+    except: pass
     for i,group in enumerate(annotated_dict_list):
         group_indices = np.array(annotated_dict_list[group])
-        print(f"group: {group}")
         #group_indices = np.array([chains_list.index(item) for item in annotated_dict_list[group]])
-        plt.scatter(axis1[group_indices],axis2[group_indices], s = 20, c= colors[i],label=group) 
-    for i,label in enumerate(chains_list):
-        plt.annotate(label, (axis1[i], axis2[i]))
+        plt.scatter(axis1[group_indices],axis2[group_indices], s = 20, c= colors[i],label=group)  
+    if one_D is False:
+        for i,label in enumerate(chains_list):
+            plt.annotate(label, (axis1[i], axis2[i]))
     plt.legend()
     plt.title("Real Cluster Map")
 
@@ -170,13 +178,22 @@ def plot_cluster_map(X,misclassified,most_matched,chains_list, classes=None,clus
     else: 
         print(f'error no cluster list found')
         return
-        
+    
 
     ######### Plot clusters
     axes =X.T
     axis1 =axes[0]#.tolist()
     axis2 =axes[1]#.tolist()
-    
+    one_D = False
+    #print(f"type X: {type(X)},  type - ax1[0]: {type(axis1[0])} {np.shape(axis1)}")
+    try:
+        if type(axis1[0]) is not np.float32:
+            axis1 = np.array(axis1.tolist()[0])
+            axis2 = np.array(axis2.tolist()[0])
+            one_D = True
+            
+    except: pass
+
     #18 colors can make 4x4 coloring max
     colors = ['tab:blue', 'tab:orange', 'tab:green', 'tab:red', 'tab:purple', 'tab:brown', 'tab:pink', 'tab:gray', 'tab:olive', 'tab:cyan','b', 'g', 'r', 'c', 'm', 'y', 'k']
     ### This can plot up
@@ -198,10 +215,10 @@ def plot_cluster_map(X,misclassified,most_matched,chains_list, classes=None,clus
 
     for k,group in enumerate(misclassified_indices):
         ax1.scatter(axis1[misclassified_indices[group]],axis2[misclassified_indices[group]], s = 20, c= colors[k+len(most_matched[0])],label=group) 
-
-    for i,label in enumerate(chains_list):
-        if label in all_misclass_conformations:
-            ax1.annotate(label, (axis1[i], axis2[i]))
+    if one_D is False:
+        for i,label in enumerate(chains_list):
+            if label in all_misclass_conformations:
+                ax1.annotate(label, (axis1[i], axis2[i]))
 
     ax1.legend(title="(Predicted, Real)")
     ax1.title.set_text(f"Clustering Misclassification: {title}")
@@ -210,12 +227,17 @@ def plot_cluster_map(X,misclassified,most_matched,chains_list, classes=None,clus
     ax2= plt.subplot(2, 1, 2)
     for i,item in enumerate(most_matched[0]):
         # print(f"item: {item}")
-        # print(f"np.where(classes_labelled == item)[0]: {np.where(classes_labelled == item)[0]}")
-        ax2.scatter(X[np.where(classes_labelled == item)[0],0], X[np.where(classes_labelled == item)[0],1], s = 20, c = colors[i],label=item)
-    for i,label in enumerate(chains_list):
-        if label not in all_misclass_conformations:
-            #print(f"label: {label}")
-            ax2.annotate(label, (axis1[i], axis2[i]))
+        #print(f"np.where(classes_labelled == item)[0]: {np.where(classes_labelled == item)[0]}")
+        #print(f"X[np.where(classes_labelled == item)[0],0]: {X[np.where(classes_labelled == item)[0],0]}")
+        if one_D is False:
+            ax2.scatter(X[np.where(classes_labelled == item)[0],0], X[np.where(classes_labelled == item)[0],1], s = 20, c = colors[i],label=item)
+        else:
+            ax2.scatter(axis1[np.where(classes_labelled == item)[0]], np.ones(len(np.where(classes_labelled == item)[0])), s = 20, c = colors[i],label=item)
+    if one_D is False:
+        for i,label in enumerate(chains_list):
+            if label not in all_misclass_conformations:
+                #print(f"label: {label}")
+                ax2.annotate(label, (axis1[i], axis2[i]))
     ax2.title.set_text(f"Clustering Results: {title} ")
     ax2.legend(title="Cluster Names")
 
@@ -395,7 +417,7 @@ def statistics(cluster_list, annotated_dict_list,to_print=True):
         print(f"precision: {pooled_precision} recall: {pooled_recall}")
         print(f"F1_score: {2*pooled_precision*pooled_recall/(pooled_precision+pooled_recall)}")
     
-    return most_matched,f1_avg,p_avg,r_avg
+    return most_matched,f1_avg,p_avg,r_avg, stats_df, out
 
 
 def heat_map(leaves_list,chains_list,matrix):
@@ -517,7 +539,7 @@ def misclassified_vs_missing(misclassified):
     x = list()
     for i in range(max_num_missing_list):
         if totals_missing[i] >0: 
-            y.append(misclassified_missing[i]/totals_missing[i])
+            y.append(misclassified_missing[i]/totals_missing[i]*100)
             x.append(i)
 
     plt.figure(figsize=(20,20))
@@ -539,17 +561,32 @@ def info(matrix,title,chains_list,annotated_dict_list,complete=True, kernel="lin
     if hierarchy_method is None then uses kmeans plot of PCA otherwise use hierarchiacal method
     title: describes the matrix
     EG: info(matrix,"linear kernel PCA rep ward",chains_list,annotated_dict_list,kernel="linear",hierarchy_method = "ward", no_clusters=3)"""
-    if complete is False:
-        matrix = np.matrix(matrix)
-        with open("removed_indices.var", "rb") as removed_indices_var:
-            removed_indices = pickle.load(removed_indices_var)
-        remaining_indices = [i for i in range(len(matrix)) if i not in removed_indices]
-        matrix = matrix[np.ix_(np.array(remaining_indices,dtype=np.intp),np.array(remaining_indices,dtype=np.intp))]
-        print(f"new matrix shape: {np.shape(matrix)}")
-    if tsne:
-        reduced_mat = plot_tsne(matrix,chains_list,title= f"T-SNE of {title} Matrix")
-    else:
-        reduced_mat= plot_kpca(matrix,chains_list, kernel=kernel,title=f" {kernel} Kernel of {title} Matrix")
+    try:
+        if complete is False:
+            matrix = np.matrix(matrix)
+            with open("removed_indices.var", "rb") as removed_indices_var:
+                removed_indices = pickle.load(removed_indices_var)
+            remaining_indices = [i for i in range(len(matrix)) if i not in removed_indices]
+            print(f"remaining_indices: {len(remaining_indices)}")
+            matrix = matrix[np.ix_(np.array(remaining_indices,dtype=np.intp),np.array(remaining_indices,dtype=np.intp))]
+            print(f"new matrix shape: {np.shape(matrix)}")
+    
+        if tsne:
+            reduced_mat = plot_tsne(matrix,chains_list,title= f"T-SNE of {title} Matrix")
+        else:
+            reduced_mat= plot_kpca(matrix,chains_list, kernel=kernel,title=f" {kernel} Kernel of {title} Matrix")
+    except: 
+        if complete is False:
+            matrix = np.matrix(matrix)
+            with open("removed_indices.var", "rb") as removed_indices_var:
+                removed_indices = pickle.load(removed_indices_var)
+            remaining_indices = [i for i in range(len(matrix)) if i not in removed_indices]
+            print(f"remaining_indices: {len(remaining_indices)}")
+            matrix = matrix[np.array(remaining_indices),0]
+            print(f"new matrix shape: {np.shape(matrix)}")
+        reduced_mat = (np.column_stack((matrix,np.ones(len(matrix)))))
+        print(f"one dimensional matrix detected, points will be plotted at height 1 from line and unlabelled")
+    print(f"shape: {np.shape(reduced_mat)}")
 
     real_cluster_map(reduced_mat,annotated_dict_list, chains_list)
     if hierarchy_method is None:
@@ -558,8 +595,9 @@ def info(matrix,title,chains_list,annotated_dict_list,complete=True, kernel="lin
         #print(f"cluster_list: {cluster_list}, cluster_labels: {cluster_labels}")
         most_matched = statistics(cluster_list,annotated_dict_list)[0]
         misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples = len(chains_list))
-        plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,classes = classes, cluster_labels=cluster_labels, title= f"Kmeans of {title}")
-
+        try:
+            plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,classes = classes, cluster_labels=cluster_labels, title= f"Kmeans of {title}")
+        except: pass
     else:
         out = linkage(matrix, method = hierarchy_method, metric = dist_metric)
         thread = threading.Thread(target=plot_dendrogram,args= (title,out))
@@ -571,9 +609,11 @@ def info(matrix,title,chains_list,annotated_dict_list,complete=True, kernel="lin
             ward_cluster = AgglomerativeClustering(linkage= hierarchy_method,n_clusters=no_clusters).fit(matrix)
             classes =ward_cluster.labels_
             cluster_labels, cluster_list = convert_classes_to_clusters(classes)
-            most_matched = statistics(cluster_list,annotated_dict_list)[0]
+            most_matched,_,_,_,stats_df,cross_classification = statistics(cluster_list,annotated_dict_list)
             misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples = len(chains_list))
+            #try:
             plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,classes= classes, cluster_labels=cluster_labels, title = hierarchy_method)
+            #except: pass
         else:
             l = leaves_list(out)
             tree = to_tree(out)
@@ -591,10 +631,12 @@ def info(matrix,title,chains_list,annotated_dict_list,complete=True, kernel="lin
             print(f"tree1: {choice1}, tree2: {choice2}")
             cluster_list = [np.sort(l[:idx1]),np.sort(l[idx1:idx2]),np.sort(l[idx2:])]
             n = tree.count
-            most_matched = statistics(cluster_list,annotated_dict_list)[0]
+            most_matched,_,_,_,stats_df,cross_classification = statistics(cluster_list,annotated_dict_list)
             misclassified = misclassification(chains_list, cluster_list, annotated_dict_list, most_matched,samples =531)
-            plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,cluster_list=cluster_list, title= hierarchy_method)
+            try: plot_cluster_map(reduced_mat,misclassified,most_matched,chains_list,cluster_list=cluster_list, title= hierarchy_method)
+            except: pass
         misclassified_vs_missing(misclassified)
+        return stats_df,cross_classification
 
 
 ########## COORDINATE BASED MATRIX functions to help pml_script_coord.py
@@ -770,34 +812,32 @@ def threshold_remove(threshold, segments=None):
         segments = [(0,len(coords[0])-1)]
     return reduce_seg(coords,segments,chains_list,threshold=threshold)
 
-def calc_coord_based_matrix(threshold, segments = [(34,54),(144,164)]):
+def calc_coord_based_matrix(threshold, segments = [(34,55),(143,165)]):
     """Calculates coordinate based matrix, where each feature is the center of a pre-identified high variance region condensed by T-SNE"""
     new_seg_list, _ = threshold_remove(threshold,segments)
     #print(f"new_seg_list: {len(new_seg_list)}")
     conformation_by_seg_by_index = coordinate_impute(new_seg_list)
-    return seg_val(conformation_by_seg_by_index)
+    return seg_val(conformation_by_seg_by_index), new_seg_list
     
 
 
 def calc_stats_process(triple):
     """Calculate stats with different mice imputations"""
     
-    new_seg_list, annotated_dict_list, no_clusters = triple
-    conformation_by_seg_by_index = coordinate_impute(new_seg_list)
+    conformation_by_seg_by_index, annotated_dict_list, no_clusters = triple
+    
     #print(f"comnformation_by_seg_by_index[0][297]: {(conformation_by_seg_by_index[0][297])}")
     matrix =seg_val(conformation_by_seg_by_index)
-    #thread = threading.Thread(target = pause_and_print, args= (f"matrix: {type(matrix)}"))
-    #thread.start()
-    #thread.join()
     ward_cluster = AgglomerativeClustering(n_clusters=no_clusters).fit(matrix)
     classes =ward_cluster.labels_
     _, cluster_list = convert_classes_to_clusters(classes)
     #print(f"shape cluster_list: {np.shape(cluster_list)}\n len(annotated_dict_list): {len(annotated_dict_list)}")
-    _,f1_avg,p_avg,r_avg = statistics(cluster_list,annotated_dict_list,to_print=False)
-    return [f1_avg,p_avg,r_avg]
+    _,f1_avg,p_avg,r_avg,stats_df,cross_classification = statistics(cluster_list,annotated_dict_list,to_print=False)
+    return ([p_avg,r_avg,f1_avg],stats_df,cross_classification)
 
-def multirun(annotated_dict_list, segments = [(34,55),(144,165)], threshold=7,no_clusters=3, iter=10):
+def multirun(segments = None, threshold=7,no_clusters=3, iter=10):
     """"""
+
     if iter <0:
         print("invalid iter")
         return
@@ -806,15 +846,43 @@ def multirun(annotated_dict_list, segments = [(34,55),(144,165)], threshold=7,no
             coords = pickle.load(coords_res_var)
         # for conformation in coords_res:
         #    print(f"conformation[-1]: {conformation[-1]}")
-        print(f"len(coords[0])-1: {len(coords[0])-1}")
+        #print(f"len(coords[0])-1: {len(coords[0])-1}")
         segments = [(0,len(coords[0])-1)]
-    new_seg_list, _ = threshold_remove(threshold,segments)
-    vector = [(new_seg_list,annotated_dict_list,no_clusters) for _ in range(iter)]
-    #print(f"vector: {vector}")
-    result = list(map(calc_stats_process,vector))
+    new_seg_list, _ = threshold_remove(threshold,segments) #remove unwanted chains before opening the chains list and creating annotated dictionary
+    with open("reduced_chains_list.var","rb") as reduced_chains_list_var:
+        reduced_chains_list = pickle.load(reduced_chains_list_var)
+        reduced_chains_list_var.close()
+    #print(f"chains_list: {chains_list}")
+    with open("structures/opened_active.var", "rb") as open_active_var:
+        open_active_list = pickle.load(open_active_var)
+        open_active_var.close()
+    with open("structures/closed_inactive.var", "rb") as closed_inactive_var:
+        closed_inactive_list = pickle.load(closed_inactive_var)
+        closed_inactive_var.close()
+    with open("structures/opened_inactive.var", "rb") as open_inactive_var:
+        open_inactive_list = pickle.load(open_inactive_var)
+        open_inactive_var.close()
+
+    annotated_dict_list_codes= {"open_active": open_active_list, "closed_inactive": closed_inactive_list, "open_inactive": open_inactive_list} #dictionary of codes list
+    annotated_dict_list ={"open_active": list(), "closed_inactive": list(), "open_inactive": list()} #dictionary of list of indices
+    for i,conformation in enumerate(reduced_chains_list):
+        for j,l in enumerate(annotated_dict_list_codes):
+            if conformation in annotated_dict_list_codes[l]:
+                #print(f"l: {l}")
+                annotated_dict_list[l].append(i)
+    conformation_by_seg_by_index = coordinate_impute(new_seg_list)  #impute once since imputations are all same, no MICE regression run
+    vector = [(conformation_by_seg_by_index,annotated_dict_list,no_clusters) for _ in range(iter)]
+    res = list(map(calc_stats_process,vector)) 
+    result = [res[i][0] for i in range(len(res))] #result is result of F1, precision, recall scores
+    average_cc_df = sum([res[i][1] for i in range(len(res))])/iter
+    average_stats_df = sum([res[i][2] for i in range(len(res))])/iter
+    print(f"average_cc_df: {average_cc_df}")
+    print(f"average_stats_df: {average_stats_df}")
     final_averages = (np.sum(np.matrix(result),axis=0)/iter)
+    out = df(result, [f"Trial {i+1}" for i in range(len(result))], ["Precision", "Recall","F1 score"])
+    
     print(f"Iterations: {iter}, f1_avg: {final_averages[0,0]}, p_avg: {final_averages[0,1]}, r_avg: {final_averages[0,2]}")
-    return result
+    return out, average_cc_df, average_stats_df
 
 
 def find_var(matrix):

@@ -156,7 +156,7 @@ def rmsd_matrix(chains_list):
         for j,other_id in enumerate(chains_list):
             ############################
             #modify matrix entry
-            matrix[i][j]= cmd.rms_cur(f"/{chain_id}////CA",f"/{other_id}////CA",matchmaker=4)
+            matrix[i][j]= cmd.rms_cur(f"/{chain_id}///144:166/CA",f"/{other_id}///144:166/CA",matchmaker=4)
             print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")  
     print(f"matrix: {matrix}")
     with open("matrix.var","wb") as infile1:
@@ -208,7 +208,7 @@ def get_rmsd_value(tup):
         return 0
     elif chain_id is None or other_id is None:
         return 0
-    return cmd.rms_cur(f"/{chain_id}///33:44+150:159/CA",f"/{other_id}///33:44+150:159/CA",matchmaker=4)
+    return cmd.rms_cur(f"/{chain_id}///144:166/CA",f"/{other_id}///144:166/CA",matchmaker=4)
     #print(f"chain: {chain_id} other: {other_id} rms success {matrix[i][j]}")
 
 
@@ -238,10 +238,10 @@ def rmsd_matrix2(mat):
     result = create_nxn_mat(result,n)
     result = add_matrices(transpose(result), result)
     print(f"finished processing")
-    with open("matrix_seg.var","wb") as infile1:
+    with open("matrix_144to166.var","wb") as infile1:
         pickle.dump(result,infile1)
         infile1.close() 
-    with open("matrix_seg.txt","w") as infile2:
+    with open("matrix_144to166.txt","w") as infile2:
         for row in result:
             infile2.write(str(row))
         infile2.close() 

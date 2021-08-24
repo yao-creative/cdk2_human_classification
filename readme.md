@@ -1,10 +1,12 @@
 # CDK2 Classification
 
+## Note:
+Anywhere it says coordinate-based, refers to the T-SNE Based map on the paper
 
 ## Description:
 Goes to the internet retrieves uniprot codes of Human CDK2 conformations, runs a script to obtain the pdb files and model them on pymol while aligning all of them to one of the conformation then outputs RMS matrix of the conformation vs other conformations.
 ## Requirements:
-Python3, Pymol
+Python3, Pymol, Sklearn, scipy, pickle, matplotlib
 ## Instructions:
 go to terminal and type ```bash run.sh```
 
