@@ -2,11 +2,14 @@
 This project is based on the classif_cdk2_conf.pdf file in reference papers where I wrote scripts to first annotate the groups of 
 Open inactive, open active, closed inactive using the pdb files of uniprot P24941 CDK2, based on the presence of TPO and cyclin structures.
 Then using RMSD and high variance regions method I cluster the proteins and check for the statistics. The full detail is explained in the paper: Exploring_Intuitive_Approaches_to_Protein_Conformation_Clustering_Using_Regions_of_High_Structural_Variance.pdf. 
+
 ## Note:
 Anywhere it says coordinate-based, refers to the T-SNE Based map on the paper
 
 ## Description:
 Goes to the internet retrieves uniprot codes of Human CDK2 conformations, runs a script to obtain the pdb files and model them on pymol while aligning all of them to one of the conformation then outputs RMSD matrix of the conformation vs other conformations.
+
+Most of the results are in the notebooks folder.
 ## Requirements:
 Python3, Pymol, Sklearn, scipy, pickle, matplotlib
 ## Instructions:
