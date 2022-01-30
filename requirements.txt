@@ -1,0 +1,8 @@
+numpy
+Pymol
+Sklearn
+scipy
+pickle
+matplotlib
+pandas
+multiprocessing

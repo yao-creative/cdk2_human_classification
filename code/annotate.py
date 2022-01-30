@@ -1,8 +1,7 @@
 import os
 from helper import nxt_itm as nxt_itm
 import pickle 
-from Bio import PDB
-from Bio import Align
+
 def main():
     annotated_txt = open("annotated.txt", "w")
 
